@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Gate 檢核 / 計算明細 / runner 加總 / 事實注入 / 參考表 / 探針 手動變異測試(SPEC-b 12 + SPEC-c 6 + SPEC-d 6 + SPEC-e 2 + SPEC-f 3 + SPEC-g 4 + … + SPEC-n 5 + SPEC-o 9 + R2 2 + SPEC-p 5 = 72 mutants)
 # 用法:bash tools/mutation_gate.sh            全套件(kill 歸屬最先失敗的測試)
-#       bash tools/mutation_gate.sh property   只跑 -k property 子集(calc M1–M4 + M18;驗不變量本身的強度,CLAUDE.md 固定解法 13)
+#       bash tools/mutation_gate.sh property   只跑 -k property 子集(calc M1–M4 + M18;驗不變量本身的強度,內部開發規則 固定解法 13)
 # 殘留偵測:原字串必須恰好出現一次(固定解法 15);還原用執行前副本而非 git checkout(固定解法 17)
 set -uo pipefail
 MODE="${1:-full}"

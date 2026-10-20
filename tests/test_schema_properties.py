@@ -1,4 +1,4 @@
-"""structured outputs 轉換層的不變量(property-based;old-coder gauntlet)。
+"""structured outputs 轉換層的不變量(property-based;證據優先流程 gauntlet)。
 
 契約方向:LLM 依轉換後 schema 產出 JSON(金額為字串)→ Pydantic 解析。
 故不變量 c 驗的是「同一份 LLM 形狀的 payload,轉換後 schema 與 Pydantic

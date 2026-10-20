@@ -2645,7 +2645,7 @@ def _apply_document_defaults(docs: dict[str, Any]) -> None:
 def generate(out_dir: Path = CLAIMS_DIR, force: bool = False) -> list[Path]:
     """將案件規格寫入 data/claims/C###/{claim,truth}.json,回傳寫出的路徑。
 
-    預設不覆蓋既有案件目錄(批次防護:CLAUDE.md 固定解法 11);
+    預設不覆蓋既有案件目錄(批次防護:內部開發規則 固定解法 11);
     force=True 才會刪除並重建——僅刪規格中存在的 C### 目錄,不碰其他東西。
     """
     from app.datagen.bundle import bundle_from_documents

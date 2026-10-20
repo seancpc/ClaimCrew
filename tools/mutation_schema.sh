@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # claim schema 轉換層手動變異測試(6 mutants;植入→跑套件→git 還原)
-# 啟動前殘留偵測:原字串必須恰好各出現一次(CLAUDE.md 固定解法 15)
+# 啟動前殘留偵測:原字串必須恰好各出現一次(內部開發規則 固定解法 15)
 set -uo pipefail
 TARGET=app/schemas/claim.py
 check() {

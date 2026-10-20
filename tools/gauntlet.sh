@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ClaimCrew gauntlet 入口:一鍵重跑全部檢測層(EVIDENCE 數字唯一來源)
-# 一律 python3 -m 呼叫,避免 PATH 工具版本漂移(CLAUDE.md B1);任一層失敗即非零退出
+# 一律 python3 -m 呼叫,避免 PATH 工具版本漂移(內部開發規則 B1);任一層失敗即非零退出
 set -euo pipefail
 echo "=== 0. 工具版本 ==="
 python3 --version

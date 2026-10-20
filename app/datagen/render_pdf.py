@@ -1,7 +1,7 @@
 """將案件 claim.json 渲染為三件套仿真 PDF;將保單 .md 渲染為條款 PDF。
 
 - 執行:python3 -m app.datagen.render_pdf [claim_id ...](無參數=全部案件+保單;
-  單目標執行支援:CLAUDE.md 固定解法 11)
+  單目標執行支援:內部開發規則 固定解法 11)
 - 輸出:data/claims/C###/pdf/{diagnosis_certificate,medical_receipt,claim_application}.pdf
         data/policies/pdf/POL-X.pdf
 - 既有 PDF 會重新生成(渲染是純函數,來源真相在 claim.json / POL-X.md)
