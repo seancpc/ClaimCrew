@@ -1,0 +1,59 @@
+{
+  "claim_id": "C044",
+  "scenario": "除外責任件:分娩(POL-C 第20條)",
+  "synthetic": true,
+  "documents": {
+    "diagnosis_certificate": {
+      "patient_name": "洪佩君",
+      "diagnosis": "足月妊娠自然分娩",
+      "icd_code": "O80",
+      "admissions": [
+        {
+          "admission_date": "2026-06-02",
+          "discharge_date": "2026-06-05",
+          "icu_days": "0"
+        }
+      ],
+      "treatment_summary": "自然產,母嬰均安,以全民健康保險身分住院",
+      "issue_date": "2026-06-05",
+      "hospital_name": "康寧聯合醫院"
+    },
+    "medical_receipt": {
+      "hospital_name": "康寧聯合醫院",
+      "patient_name": "洪佩君",
+      "receipt_date": "2026-06-05",
+      "items": [
+        {
+          "item_name": "病房費",
+          "amount": "12000"
+        },
+        {
+          "item_name": "接生費",
+          "amount": "15000"
+        },
+        {
+          "item_name": "藥費",
+          "amount": "2400"
+        }
+      ],
+      "total_amount": "29400",
+      "is_copy": false
+    },
+    "claim_application": {
+      "applicant_name": "洪佩君",
+      "policy_number": "POL-C-2026-01",
+      "policy_effective_date": "2024-11-01",
+      "claim_type": "實支實付住院醫療",
+      "application_date": "2026-06-11",
+      "claimed_amount": "29400",
+      "other_insurer_paid": {
+        "room_fee": "0",
+        "surgery_fee": "0",
+        "misc_fee": "0",
+        "ambulance_fee": "0",
+        "unallocated": "0"
+      }
+    },
+    "incident_statement": null
+  }
+}

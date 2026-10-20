@@ -1,0 +1,45 @@
+{
+  "$schema": "https://schema.cognitiveservices.azure.com/formrecognizer/2021-03-01/fields.json",
+  "fields": [
+    {
+      "fieldKey": "patient_name",
+      "fieldType": "string",
+      "fieldFormat": "not-specified"
+    },
+    {
+      "fieldKey": "diagnosis",
+      "fieldType": "string",
+      "fieldFormat": "not-specified"
+    },
+    {
+      "fieldKey": "icd_code",
+      "fieldType": "string",
+      "fieldFormat": "not-specified"
+    },
+    {
+      "fieldKey": "admission_date",
+      "fieldType": "string",
+      "fieldFormat": "not-specified"
+    },
+    {
+      "fieldKey": "discharge_date",
+      "fieldType": "string",
+      "fieldFormat": "not-specified"
+    },
+    {
+      "fieldKey": "treatment_summary",
+      "fieldType": "string",
+      "fieldFormat": "not-specified"
+    },
+    {
+      "fieldKey": "issue_date",
+      "fieldType": "string",
+      "fieldFormat": "not-specified"
+    },
+    {
+      "fieldKey": "hospital_name",
+      "fieldType": "string",
+      "fieldFormat": "not-specified"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "claim_id": "C001",
+  "scenario": "順利件:單純疾病住院(POL-A)",
+  "synthetic": true,
+  "decision": "approve",
+  "approved_amount": "18000",
+  "derivation": "住院 3/2~3/7 含入出院日共 6 日;日額 2000×6(第7條)+ 輔助 1000×6(第11條)= 18,000;等待期已滿(生效 2025-01-10)",
+  "clause_basis": [
+    "POL-A 第7條",
+    "POL-A 第11條"
+  ]
+}

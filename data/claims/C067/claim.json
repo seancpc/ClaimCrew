@@ -1,0 +1,59 @@
+{
+  "claim_id": "C067",
+  "scenario": "申請時效消滅件(POL-A 第14條;程序性條文)",
+  "synthetic": true,
+  "documents": {
+    "diagnosis_certificate": {
+      "patient_name": "賴志誠",
+      "diagnosis": "社區性肺炎",
+      "icd_code": "J18.9",
+      "admissions": [
+        {
+          "admission_date": "2024-04-06",
+          "discharge_date": "2024-04-10",
+          "icu_days": "0"
+        }
+      ],
+      "treatment_summary": "抗生素治療後出院",
+      "issue_date": "2024-04-10",
+      "hospital_name": "平安紀念醫院"
+    },
+    "medical_receipt": {
+      "hospital_name": "平安紀念醫院",
+      "patient_name": "賴志誠",
+      "receipt_date": "2024-04-10",
+      "items": [
+        {
+          "item_name": "病房費",
+          "amount": "7500"
+        },
+        {
+          "item_name": "藥費",
+          "amount": "3200"
+        },
+        {
+          "item_name": "檢驗費",
+          "amount": "2600"
+        }
+      ],
+      "total_amount": "13300",
+      "is_copy": false
+    },
+    "claim_application": {
+      "applicant_name": "賴志誠",
+      "policy_number": "POL-A-2026-01",
+      "policy_effective_date": "2023-01-15",
+      "claim_type": "住院醫療",
+      "application_date": "2026-05-02",
+      "claimed_amount": "15000",
+      "other_insurer_paid": {
+        "room_fee": "0",
+        "surgery_fee": "0",
+        "misc_fee": "0",
+        "ambulance_fee": "0",
+        "unallocated": "0"
+      }
+    },
+    "incident_statement": null
+  }
+}

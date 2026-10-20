@@ -1,0 +1,41 @@
+{
+  "claim_id": "C026",
+  "scenario": "文件缺漏件:缺理賠申請書",
+  "synthetic": true,
+  "documents": {
+    "diagnosis_certificate": {
+      "patient_name": "盧靜宜",
+      "diagnosis": "腹股溝疝氣",
+      "icd_code": "K40.90",
+      "admissions": [
+        {
+          "admission_date": "2026-05-06",
+          "discharge_date": "2026-05-08",
+          "icu_days": "0"
+        }
+      ],
+      "treatment_summary": "行疝氣修補術",
+      "issue_date": "2026-05-08",
+      "hospital_name": "安心綜合醫院"
+    },
+    "medical_receipt": {
+      "hospital_name": "安心綜合醫院",
+      "patient_name": "盧靜宜",
+      "receipt_date": "2026-05-08",
+      "items": [
+        {
+          "item_name": "病房費",
+          "amount": "4500"
+        },
+        {
+          "item_name": "手術費",
+          "amount": "15000"
+        }
+      ],
+      "total_amount": "19500",
+      "is_copy": false
+    },
+    "claim_application": null,
+    "incident_statement": null
+  }
+}

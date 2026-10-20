@@ -1,0 +1,13 @@
+{
+  "claim_id": "C040",
+  "scenario": "未列表手術件:POL-B 射頻消融",
+  "synthetic": true,
+  "decision": "manual_review",
+  "approved_amount": "0",
+  "derivation": "射頻消融是否落入第2條第三款手術定義本身即屬爭點;縱認構成手術,亦未列於附錄一,依第11條由保險公司比照核定等級,屬人工裁量 → 轉人工",
+  "clause_basis": [
+    "POL-B 第2條",
+    "POL-B 第11條",
+    "POL-B 附錄一"
+  ]
+}

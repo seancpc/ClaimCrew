@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ClaimCrew — Azure 全託管醫療保險理賠多代理審核系統</title>
+<style>
+  :root {
+    --bg: #1e1e1e;
+    --text: #e0e0e0;
+    --heading: #00bcd4;
+    --link: #58a6ff;
+    --code-bg: #2a2a2a;
+    --border: #333;
+    --muted: #9aa0a6;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    font-size: 16px;
+  }
+  .container { max-width: 800px; margin: 0 auto; padding: 2rem; }
+  h1 { color: var(--heading); font-weight: bold; font-size: 2rem; margin: 0 0 0.3rem; }
+  .subtitle { color: var(--text); font-size: 1.1rem; margin: 0; }
+  .badges { color: var(--muted); font-size: 0.8rem; margin: 0.6rem 0 0; font-family: Consolas, monospace; }
+  .lang { text-align: right; font-size: 0.9rem; margin: 0 0 1.2rem; }
+  .banner {
+    background: #232323; border: 1px solid var(--border); border-radius: 6px;
+    padding: 0.7rem 1rem; margin: 0.9rem 0 0; font-size: 0.9rem;
+  }
+  .banner strong { color: var(--heading); }
+  .lead {
+    background: #232323; border-left: 4px solid var(--heading);
+    border-radius: 0 6px 6px 0; padding: 1rem 1.1rem; margin: 1.6rem 0;
+  }
+  h2 { color: var(--heading); font-weight: bold; font-size: 1.5rem; margin: 2.5rem 0 0.8rem; }
+  h3 { color: #ffffff; font-weight: bold; font-size: 1.12rem; margin: 1.9rem 0 0.4rem; }
+  a { color: var(--link); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  strong { color: #ffffff; }
+  ul { padding-left: 1.4rem; margin: 0.7rem 0; }
+  li { margin: 0.4rem 0; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.95rem; }
+  th, td { border: 1px solid var(--border); padding: 0.5rem 0.8rem; text-align: left; vertical-align: top; }
+  th { background: var(--code-bg); white-space: nowrap; }
+  pre {
+    background: var(--code-bg); padding: 1rem; border-radius: 6px;
+    overflow-x: auto; font-size: 0.78rem; line-height: 1.45;
+    font-family: Consolas, monospace; color: var(--text);
+  }
+  code { background: var(--code-bg); padding: 1px 5px; border-radius: 3px; font-size: 90%; }
+  .btns { display: flex; gap: 0.8rem; flex-wrap: wrap; margin: 1.1rem 0; }
+  .btn {
+    display: inline-block; padding: 0.6rem 1.1rem;
+    border: 1px solid var(--link); border-radius: 6px;
+    color: var(--link); font-size: 0.95rem; font-weight: 500;
+  }
+  .btn:hover { background: var(--link); color: var(--bg); text-decoration: none; }
+  .btn.primary { background: var(--heading); border-color: var(--heading); color: var(--bg); }
+  .btn.primary:hover { opacity: 0.85; color: var(--bg); }
+  .note {
+    background: #2a2620; border-left: 4px solid #d4a017;
+    border-radius: 0 6px 6px 0; padding: 0.8rem 1rem; margin: 1rem 0; font-size: 0.95rem;
+  }
+  .placeholder {
+    background: var(--code-bg); border: 1px dashed #555; border-radius: 6px;
+    padding: 2.5rem 1.5rem; text-align: center; color: var(--muted); margin: 1rem 0;
+  }
+  img.shot { max-width: 760px; width: 100%; border: 1px solid var(--border); border-radius: 6px; }
+  .caption { font-size: 0.85rem; color: var(--muted); }
+  footer {
+    margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--border);
+    color: var(--muted); font-size: 0.95rem;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <p class="lang"><a href="index.en.html">English</a> ｜ 繁體中文</p>
+
+  <h1>醫療保險理賠多代理審核系統（ClaimCrew）</h1>
+  <p class="subtitle">Multi-Agent Medical Insurance Claims Review on Azure Managed Services</p>
+  <div class="banner">全 Azure 託管、零自建基礎設施 · <strong>LLM 判事實、程式管放行</strong> · 73 案全量回歸放行錯 0 · 開發期雲端總花費 NT$2,189、拆除後每日 $0 · 全合成資料零 PHI</div>
+
+  <div class="btns">
+    <a class="btn primary" href="https://youtu.be/emzxXhkF_Tk">▶ Demo 影片</a>
+    <a class="btn" href="https://github.com/seancpc/ClaimCrew">原始碼(GitHub)</a>
+    <a class="btn" href="https://github.com/seancpc/ClaimCrew/tree/main/docs/adr">架構決策紀錄(ADR)</a>
+  </div>
+
+  <p class="lead">
+    保險公司收到理賠申請(診斷證明書 + 醫療收據 + 申請書)後,系統完成文件抽取、保單條款比對(帶原文引用)、
+    初審判定與人工覆核路由。核心設計是<strong>模型只負責判讀事實,放行由程式決定</strong>:核付金額由程式從明細加總並反查條款,
+    47 種確定性檢核任一未過即轉人工。成本也是一級工程目標 —— 不需雲的工作先以 $0 完成,完成後以 Bicep 全拆。
+  </p>
+
+  <h2>設計概念</h2>
+  <ul>
+    <li><strong>壓縮計費窗口</strong>:合成資料、schema、Gate、eval、prompt、Bicep 在建立任何 Azure 資源<strong>之前</strong>全部完成 —— 計費時鐘最後才啟動,付費期只做「只有雲上能做的事」。</li>
+    <li><strong>LLM 判事實、程式管放行</strong>:模型填判定與算式材料、指出條款段落;程式加總金額、填入引文原文,再由 Gate 反查條款、限額、日數、等待期與信心門檻 —— 任一未過即轉人工。</li>
+    <li><strong>拆建即成本控制</strong>:完成後全拆(常駐費 $0),repo 保存「可重生一切的原料與腳本」而非產物;需要 demo 時以 Bicep + 重建 Runbook 重建。</li>
+  </ul>
+
+  <h2>專案簡介</h2>
+  <ul>
+    <li><strong>任務</strong>:理賠案三分類(核付 / 拒付 / 需人工)+ 核付金額計算,每筆判定逐條綁定條款引用。</li>
+    <li><strong>驗證規模</strong>:3 份虛構保單(住院定額 / 手術定額 / 實支實付,共 100 條)、73 件合成理賠案(核付 41 / 拒付 23 / 人工 9;含等待期、既往症、除外責任、限額截斷、文件矛盾等陷阱案型),真值人工逐案檢核後凍結為 eval set。</li>
+    <li><strong>開發投入</strong>:約 100 小時 AI 協作開發(依 commit 時戳估算,為下限)、543 commits、37 份 SPEC、10 份英文 ADR。</li>
+  </ul>
+  <p><img class="shot" src="screenshots/20260901_合成理賠案三件套_C002.png" alt="合成理賠案三件套(診斷證明書 / 收據 / 申請書)仿真 PDF"></p>
+
+  <h2>系統架構</h2>
+  <p>上傳請求檔即觸發;兩個 LLM 角色之間與之後都隔著程式檢核,放行權只在程式手上。</p>
+  <pre>
+  上傳請求檔(Blob)→ Event Grid → Storage Queue
+                         │
+                         ▼
+        Container Apps Job(Entra 受控身分,無金鑰)
+                         │
+                         ▼
+  Document Intelligence 抽取(收據 prebuilt / 診斷書 custom neural;Blob 快取)
+                         │
+                         ▼
+  Extraction  gpt-4.1-mini:整理成統一 schema(帶欄位信心)
+                         │
+                         ▼
+  Intake      程式:缺件即轉人工
+                         │
+                         ▼
+  Decision    gpt-4o:AI Search 檢索條款 → 判定 + 算式明細 + 條款段落
+                         │
+                         ▼
+              程式:填入引文原文、加總核付金額
+                         │
+                         ▼
+  Gate        程式:47 種確定性檢核
+                         │
+        ┌────────────────┼────────────────┐
+        ▼                ▼                ▼
+    自動核付          自動拒付          人工覆核
+                                          │
+                                          ▼
+        Logic Apps 摘要信 → 覆核表單 → reviews-inbox → 統計
+
+  全案輸出落盤 Blob runs/&lt;run_id&gt;/ · Job 失敗 → Azure Monitor 告警
+  (選用)Repair 顧問 agent:Foundry Agent Service,只寫建議、不改判定</pre>
+  <ul>
+    <li><strong>按驗證邊界拆角色,不按知識領域拆</strong>:Policy 獨立成 agent 的實驗 recall 只有 0.772、會漏掉需要依事實才知道適用的條款,因此條款比對與判定留在同一次 gpt-4o 呼叫(ADR-008)。</li>
+    <li><strong>Agent Service 的實際用量</strong>:只承載顧問模式的 Repair agent,預設關閉;雲端 Job 從未啟用。角色之間的路由刻意留在程式,不交給模型編排。</li>
+    <li><strong>模型分層</strong>:抽取改用 gpt-4.1-mini 後每案成本 −33.8%,72 案 eval 不退步(ADR-007)。</li>
+  </ul>
+
+  <h2>使用技術</h2>
+  <table>
+    <tr><th>類別</th><th>技術堆疊</th></tr>
+    <tr><td>AI 模型</td><td>Azure OpenAI gpt-4o(判定)、gpt-4.1-mini(抽取)、Structured Outputs(JSON Schema)</td></tr>
+    <tr><td>文件理解</td><td>Azure AI Document Intelligence(收據 prebuilt、診斷書 custom neural 自訓)</td></tr>
+    <tr><td>檢索</td><td>Azure AI Search(條款索引)</td></tr>
+    <tr><td>Agent</td><td>Azure AI Foundry Agent Service(顧問模式,無放行權)</td></tr>
+    <tr><td>確定性分流</td><td>程式側 Gate:47 種檢核(條款反查、金額限額、日數、等待期、信心門檻)</td></tr>
+    <tr><td>編排與觸發</td><td>Azure Container Apps Jobs、Event Grid、Storage Queue(KEDA)</td></tr>
+    <tr><td>儲存</td><td>Azure Blob Storage(輸入、輸出、覆核紀錄、DI 快取)</td></tr>
+    <tr><td>人工覆核</td><td>Azure Logic Apps(摘要信 + 覆核表單)</td></tr>
+    <tr><td>監控與成本</td><td>Azure Monitor / Log Analytics(Job 失敗告警)、Cost Management 預算告警</td></tr>
+    <tr><td>身分與安全</td><td>Microsoft Entra 受控身分、RBAC(無金鑰)</td></tr>
+    <tr><td>基礎設施</td><td>Bicep(IaC)、Azure Container Registry、GitHub Actions CI</td></tr>
+    <tr><td>程式</td><td>Python 3.11、Pydantic v2(schema 單一真相源)</td></tr>
+    <tr><td>品質</td><td>pytest(1,362 tests)、Hypothesis、mypy、ruff、pip-audit、手寫變異測試(225 個)</td></tr>
+    <tr><td>已評估未採用</td><td>Azure AI Content Safety(groundedness / Prompt Shields,見 ADR-009)</td></tr>
+  </table>
+
+  <h2>成效亮點</h2>
+  <ul>
+    <li><strong>LLM 判事實、程式管放行</strong>:每一個「讓 LLM 自己修正後放行」的實驗都留下對應的 Gate 漏洞,所以模型沒有放行權;Azure 的 groundedness 與 Prompt Shields 也實測後才否決接入,結論和證據寫成 10 份 ADR。</li>
+    <li><strong>成本是一級工程目標</strong>:不需上雲的工作(資料、schema、Gate、eval、Bicep)全部先以 $0 完成,Azure 最後才開;抽取改用 gpt-4.1-mini 後每案成本降 33.8%,eval 不退步;完成後用 Bicep 全拆,拆除後每日 NT$0。</li>
+    <li><strong>證據先於宣稱</strong>:每次改動前先寫好判準,以至少 3 輪歷史區間判斷是否退步,不符就撤回(SPEC-ab、SPEC-x 都因此撤回);把「放行錯」改成雙向計數後,挖出舊口徑漏掉的 6 件錯誤自動拒付;1,362 個測試加上 225 個手寫變異全數殺死。</li>
+    <li><strong>事件驅動、無金鑰</strong>:上傳請求檔 → Event Grid → Storage Queue → Container Apps Job 自動執行,全程使用 Entra 受控身分與 RBAC,沒有任何 API key;Job 只在執行時計費,閒置時 Container Apps 費用為 0。</li>
+    <li><strong>程式填引文</strong>:模型只指出條款段落,引文原文由程式從條款庫填入,「模型抄錯引文」這類假旗標從大宗降到 v17 的 0 件。</li>
+  </ul>
+
+  <h3>v17 全量回歸(73 案,雲端事件觸發)</h3>
+  <table>
+    <tr><th>指標</th><th>結果</th></tr>
+    <tr><td>放行錯(核付金額錯 / 不該拒卻自動拒付)</td><td><strong>0 / 0</strong> —— 自動核付 24 件金額全對、自動拒付 20 件全對</td></tr>
+    <tr><td>危險錯(該拒付卻核付)</td><td>0</td></tr>
+    <tr><td>Gate 後正確率 / 需人工案件召回</td><td>0.726 / 1.0</td></tr>
+    <tr><td>引文抄錯 / 條款段落找不到</td><td>0 / 1.5%</td></tr>
+    <tr><td>轉人工</td><td>28 件(寧可人工的代價)</td></tr>
+  </table>
+  <p><img class="shot" src="screenshots/20261011_v17_digest.png" alt="v17 覆核摘要信"></p>
+
+  <h3>成本(Azure Cost Management 實帳)</h3>
+  <table>
+    <tr><th>項目</th><th>金額</th></tr>
+    <tr><td>2026-10 開發期總花費</td><td>NT$2,189(預算 3,000;約 97% 為模型費用)</td></tr>
+    <tr><td>一輪 73 案全量</td><td>約 NT$67</td></tr>
+    <tr><td>環境閒置</td><td>約 NT$4–5 / 日(ACR + 告警)</td></tr>
+    <tr><td>拆除後</td><td>NT$0 / 日;拆除耗時 15 分鐘</td></tr>
+  </table>
+  <p><img class="shot" src="screenshots/20261017_cost_zero_day.png" alt="拆除隔日 Cost analysis:全部計量 NT$0"></p>
+  <p class="caption">拆除隔日(10/17)全部計量 NT$0;圖中 10/17 起的綠色區塊為 Azure 預測線,非實際費用。</p>
+
+  <h2>開發歷程</h2>
+  <p>開發過程不是「一路成功」,而是一連串「遇到問題 → 驗證 → 誠實修正」。以下是幾個關鍵節點:</p>
+
+  <h3>① coverage 100%、測試全綠,為什麼還是有洞?</h3>
+  <p><strong>解決方式</strong>:對 schema 轉換層跑手動變異測試,mutant M3(拿掉陣列巢狀物件的強制邏輯)在 13 個測試全綠、行覆蓋 100% 下存活 —— 既有測試只驗了「現有模型的輸出」,從未直接驗函式核心語意。補上手構 inline 巢狀結構的直接單元測試後復殺,最終 6/6。這是「覆蓋率是偵測器不是目標」的具體實證。</p>
+
+  <h3>② PDF 顯示正常,抽取回讀卻全是亂碼?</h3>
+  <p><strong>解決方式</strong>:合成文件 PDF 首版用 CID 字型(MSung-Light),檢視器顯示完全正常,但 pdfplumber 抽文字回讀成錯亂漢字 —— 根因是 CID 字型不寫入 ToUnicode 對照表,<strong>顯示正確不代表文字層正確</strong>。改嵌入 TTF(wqy-zenhei)後回讀正確;「生成檔案必做抽取回讀驗證」自此成為固定紀律。</p>
+
+  <h3>③ demo 不用時的閒置月費,怎麼歸零?</h3>
+  <p><strong>解決方式</strong>:採「拆建即成本控制」—— 全拆後常駐費 $0,需要時以 Bicep 重建。關鍵想通的一點:repo 該保存的是<strong>可重生一切的原料與腳本</strong>(DI 訓練樣本 + 標註、條款 PDF + 建索引腳本),而非產物本身(custom 模型不可匯出)。實測兩次全拆:27 分 → 15 分,拆除後隔日帳單歸零。</p>
+
+  <h3>④ 40 件理賠案的真值金額,怎麼避免手算轉錄錯誤?</h3>
+  <p><strong>解決方式</strong>:首批 10 案手寫並人工核算;擴量 30 案改為模板 × 參數的程式化生成,真值金額由<strong>與條款參數同一份定義</strong>的確定性計算器產出,推導式自動組出、逐案附於真值檔。日數慣例(含入出院日)寫死在單一函式,消滅「同一慣例散落多處」的漂移空間。</p>
+
+  <h3>⑤ 40 案真值我自己驗全綠,人工檢核卻抓出 7 個錯</h3>
+  <p><strong>解決方式</strong>:案件、條款、真值三者都由同一套產生器產出,自我一致不等於正確——若對條款的理解有偏差,三者會一起錯且錯得完全一致,任何自動檢查都抓不到。於是出一份逐案檢核表交人工判定,核出 6 個錯,最嚴重的是把「文件不全補正」掛到「詐欺與不實告知」條;修正時又連帶發現第 7 個(術式不在附錄表)。共通點是<strong>跨檔案的語意一致性</strong>(條號 ↔ 條文內容、案型標籤 ↔ 欄位數值),程式只能驗結構與算術。教訓一句話:<strong>AI 出的題不能由 AI 自己閱卷</strong>。</p>
+  <p><img class="shot" src="screenshots/20260901_真值檢核表_人工紅筆意見.png" alt="真值檢核表:人工紅筆意見"></p>
+
+  <h3>⑥ 讓 LLM 修補被攔下的案件再放行,準確率明明上升,為什麼否決?</h3>
+  <p><strong>解決方式</strong>:Repair agent 以 Gate 為工具重判被攔下的案件,外加六道確定性防護。兩輪全量重放,Gate 後正確率確實上升(0.694 → 0.792),但每輪都放行一件金額錯:一次模型縮小收據金額來湊限額檢核(C003 −2,000),一次修對了類別卻撞上 Gate 沒有的分段限額檢核(C055 +5,000)。<strong>每一件放行錯都對應一個 Gate 漏洞</strong>,修補層等於把「幸運轉人工」變成損失。結論:Repair 改為顧問模式、無放行權,漏洞改用確定性檢核補上(ADR-008)。</p>
+
+  <h3>⑦ Azure 的 groundedness 偵測能抓模型捏造嗎?</h3>
+  <p><strong>解決方式</strong>:先證明 API 本身是決定性的(10 案 × 3 次,極差 0),再用已知答案的對照對測鑑別力:捏造的既往症主張 0/3 被抓到,有源頭的合法拒付卻 3/3 被判捏造,乾淨案的日數主張 12/12 誤報。API 把「推論句」當捏造、把「條款詞彙出現」當有據,與理賠裁決的任務型態不合 —— 不接主管線。Prompt Shields 對中文注入 0/2 命中,而既有的「抽取 → schema → Gate」邊界在 9 個注入變體下放行 0、判定翻轉 0(ADR-009)。</p>
+
+  <h2>資料與合規</h2>
+  <ul>
+    <li>本專案為<strong>技術展示用途</strong>,保單條款為教學級虛構文本,非真實保險商品,不構成任何要約或理賠依據。</li>
+    <li>全部理賠案件、人名、醫院、病歷內容均為<strong>合成資料,零 PHI</strong>;每份生成 PDF 內文標註「合成示範資料」;覆核卡片與摘要信對自由文字欄做姓名遮罩。</li>
+    <li>程式碼採 MIT License;開發全程未使用任何公司資源與內部文件格式。</li>
+  </ul>
+
+  <footer>
+    <a href="https://meadow-sky-dfe.notion.site/Sean-Chuang-AI-1ec37081de33803ea095efee6f45a142">← 返回作品集主頁</a>
+  </footer>
+
+</div>
+</body>
+</html>

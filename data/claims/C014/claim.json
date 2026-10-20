@@ -1,0 +1,55 @@
+{
+  "claim_id": "C014",
+  "scenario": "順利件:POL-A 住院 20 日",
+  "synthetic": true,
+  "documents": {
+    "diagnosis_certificate": {
+      "patient_name": "謝佩珊",
+      "diagnosis": "蜂窩性組織炎",
+      "icd_code": "L03.116",
+      "admissions": [
+        {
+          "admission_date": "2026-06-01",
+          "discharge_date": "2026-06-20",
+          "icu_days": "0"
+        }
+      ],
+      "treatment_summary": "清創換藥與抗生素治療",
+      "issue_date": "2026-06-20",
+      "hospital_name": "安心綜合醫院"
+    },
+    "medical_receipt": {
+      "hospital_name": "安心綜合醫院",
+      "patient_name": "謝佩珊",
+      "receipt_date": "2026-06-20",
+      "items": [
+        {
+          "item_name": "病房費",
+          "amount": "30000"
+        },
+        {
+          "item_name": "藥費",
+          "amount": "18000"
+        }
+      ],
+      "total_amount": "48000",
+      "is_copy": false
+    },
+    "claim_application": {
+      "applicant_name": "謝佩珊",
+      "policy_number": "POL-A-2026-01",
+      "policy_effective_date": "2024-10-01",
+      "claim_type": "住院醫療",
+      "application_date": "2026-06-26",
+      "claimed_amount": "60000",
+      "other_insurer_paid": {
+        "room_fee": "0",
+        "surgery_fee": "0",
+        "misc_fee": "0",
+        "ambulance_fee": "0",
+        "unallocated": "0"
+      }
+    },
+    "incident_statement": null
+  }
+}

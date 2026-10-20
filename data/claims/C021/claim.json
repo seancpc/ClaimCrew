@@ -1,0 +1,55 @@
+{
+  "claim_id": "C021",
+  "scenario": "等待期未滿件:POL-A",
+  "synthetic": true,
+  "documents": {
+    "diagnosis_certificate": {
+      "patient_name": "洪國強",
+      "diagnosis": "急性膽囊炎",
+      "icd_code": "K81.0",
+      "admissions": [
+        {
+          "admission_date": "2026-07-05",
+          "discharge_date": "2026-07-09",
+          "icu_days": "0"
+        }
+      ],
+      "treatment_summary": "住院治療後出院",
+      "issue_date": "2026-07-09",
+      "hospital_name": "平安紀念醫院"
+    },
+    "medical_receipt": {
+      "hospital_name": "平安紀念醫院",
+      "patient_name": "洪國強",
+      "receipt_date": "2026-07-09",
+      "items": [
+        {
+          "item_name": "病房費",
+          "amount": "6000"
+        },
+        {
+          "item_name": "藥費",
+          "amount": "2500"
+        }
+      ],
+      "total_amount": "8500",
+      "is_copy": false
+    },
+    "claim_application": {
+      "applicant_name": "洪國強",
+      "policy_number": "POL-A-2026-01",
+      "policy_effective_date": "2026-06-20",
+      "claim_type": "住院醫療",
+      "application_date": "2026-07-15",
+      "claimed_amount": "15000",
+      "other_insurer_paid": {
+        "room_fee": "0",
+        "surgery_fee": "0",
+        "misc_fee": "0",
+        "ambulance_fee": "0",
+        "unallocated": "0"
+      }
+    },
+    "incident_statement": null
+  }
+}

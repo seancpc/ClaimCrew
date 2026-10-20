@@ -1,0 +1,67 @@
+{
+  "claim_id": "C063",
+  "scenario": "等待期例外件:傷害不受疾病等待期限制(POL-A 第22條第二項;C048 的 A 鏡像)",
+  "synthetic": true,
+  "documents": {
+    "diagnosis_certificate": {
+      "patient_name": "江承翰",
+      "diagnosis": "左尺骨骨折",
+      "icd_code": "S52.201",
+      "admissions": [
+        {
+          "admission_date": "2026-06-09",
+          "discharge_date": "2026-06-12",
+          "icu_days": "0"
+        }
+      ],
+      "treatment_summary": "2026-06-09 騎乘機車遭汽車追撞致傷(持有效駕照、無飲酒),行骨折開放復位內固定術",
+      "issue_date": "2026-06-12",
+      "hospital_name": "平安紀念醫院"
+    },
+    "medical_receipt": {
+      "hospital_name": "平安紀念醫院",
+      "patient_name": "江承翰",
+      "receipt_date": "2026-06-12",
+      "items": [
+        {
+          "item_name": "病房費",
+          "amount": "8000"
+        },
+        {
+          "item_name": "手術費",
+          "amount": "30000"
+        },
+        {
+          "item_name": "麻醉費",
+          "amount": "5000"
+        },
+        {
+          "item_name": "藥費",
+          "amount": "2000"
+        },
+        {
+          "item_name": "醫材費",
+          "amount": "12000"
+        }
+      ],
+      "total_amount": "57000",
+      "is_copy": false
+    },
+    "claim_application": {
+      "applicant_name": "江承翰",
+      "policy_number": "POL-A-2026-01",
+      "policy_effective_date": "2026-06-01",
+      "claim_type": "住院醫療",
+      "application_date": "2026-06-18",
+      "claimed_amount": "37000",
+      "other_insurer_paid": {
+        "room_fee": "0",
+        "surgery_fee": "0",
+        "misc_fee": "0",
+        "ambulance_fee": "0",
+        "unallocated": "0"
+      }
+    },
+    "incident_statement": null
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "claim_id": "C018",
+  "scenario": "金額計算件:POL-A 含 ICU 4 日",
+  "synthetic": true,
+  "documents": {
+    "diagnosis_certificate": {
+      "patient_name": "簡淑惠",
+      "diagnosis": "敗血症",
+      "icd_code": "A41.9",
+      "admissions": [
+        {
+          "admission_date": "2026-03-20",
+          "discharge_date": "2026-04-02",
+          "icu_days": "4"
+        }
+      ],
+      "treatment_summary": "加護病房治療四日後轉普通病房,共住院14日",
+      "issue_date": "2026-04-02",
+      "hospital_name": "平安紀念醫院"
+    },
+    "medical_receipt": {
+      "hospital_name": "平安紀念醫院",
+      "patient_name": "簡淑惠",
+      "receipt_date": "2026-04-02",
+      "items": [
+        {
+          "item_name": "病房費",
+          "amount": "28000"
+        },
+        {
+          "item_name": "加護病房費",
+          "amount": "32000"
+        },
+        {
+          "item_name": "藥費",
+          "amount": "16800"
+        }
+      ],
+      "total_amount": "76800",
+      "is_copy": false
+    },
+    "claim_application": {
+      "applicant_name": "簡淑惠",
+      "policy_number": "POL-A-2026-01",
+      "policy_effective_date": "2024-09-01",
+      "claim_type": "住院醫療",
+      "application_date": "2026-04-08",
+      "claimed_amount": "50000",
+      "other_insurer_paid": {
+        "room_fee": "0",
+        "surgery_fee": "0",
+        "misc_fee": "0",
+        "ambulance_fee": "0",
+        "unallocated": "0"
+      }
+    },
+    "incident_statement": null
+  }
+}

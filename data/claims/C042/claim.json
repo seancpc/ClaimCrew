@@ -1,0 +1,71 @@
+{
+  "claim_id": "C042",
+  "scenario": "除外責任件:酒駕(POL-C 第17條)",
+  "synthetic": true,
+  "documents": {
+    "diagnosis_certificate": {
+      "patient_name": "楊志豪",
+      "diagnosis": "右脛骨骨幹骨折",
+      "icd_code": "S82.201",
+      "admissions": [
+        {
+          "admission_date": "2026-04-12",
+          "discharge_date": "2026-04-16",
+          "icu_days": "0"
+        }
+      ],
+      "treatment_summary": "騎乘機車自撞路樹送急診,右脛骨骨幹骨折,行骨折開放復位內固定術,以全民健康保險身分住院",
+      "issue_date": "2026-04-16",
+      "hospital_name": "安心綜合醫院"
+    },
+    "medical_receipt": {
+      "hospital_name": "安心綜合醫院",
+      "patient_name": "楊志豪",
+      "receipt_date": "2026-04-16",
+      "items": [
+        {
+          "item_name": "病房費",
+          "amount": "10000"
+        },
+        {
+          "item_name": "手術費",
+          "amount": "38000"
+        },
+        {
+          "item_name": "麻醉費",
+          "amount": "6000"
+        },
+        {
+          "item_name": "藥費",
+          "amount": "4800"
+        },
+        {
+          "item_name": "醫材費",
+          "amount": "12000"
+        }
+      ],
+      "total_amount": "70800",
+      "is_copy": false
+    },
+    "claim_application": {
+      "applicant_name": "楊志豪",
+      "policy_number": "POL-C-2026-01",
+      "policy_effective_date": "2025-06-01",
+      "claim_type": "實支實付住院醫療",
+      "application_date": "2026-04-22",
+      "claimed_amount": "70800",
+      "other_insurer_paid": {
+        "room_fee": "0",
+        "surgery_fee": "0",
+        "misc_fee": "0",
+        "ambulance_fee": "0",
+        "unallocated": "0"
+      }
+    },
+    "incident_statement": {
+      "source": "police_record",
+      "incident_date": "2026-04-12",
+      "statement_text": "2026-04-12 當事人騎乘普通重型機車行經郊區道路自撞路樹,經警方到場實施吐氣酒精濃度測試為 0.55 mg/L,超過道路交通安全規則規定標準(0.15 mg/L),依法舉發;當事人由救護車送醫。"
+    }
+  }
+}

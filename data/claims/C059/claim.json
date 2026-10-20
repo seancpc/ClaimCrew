@@ -1,0 +1,76 @@
+{
+  "claim_id": "C059",
+  "scenario": "反例件:出院後第 15 日再住院不視為同一次,雜費限額不合併(POL-C 第13條;C055 對照)",
+  "synthetic": true,
+  "documents": {
+    "diagnosis_certificate": {
+      "patient_name": "柯宜庭",
+      "diagnosis": "急性腎盂腎炎(復發)",
+      "icd_code": "N10",
+      "admissions": [
+        {
+          "admission_date": "2026-07-01",
+          "discharge_date": "2026-07-05",
+          "icu_days": "0"
+        },
+        {
+          "admission_date": "2026-07-20",
+          "discharge_date": "2026-07-23",
+          "icu_days": "0"
+        }
+      ],
+      "treatment_summary": "第 1 次住院靜脈抗生素(含自費抗生素)治療後出院;出院後第 15 日因同一疾病復發再入院,續以自費抗生素治療;以全民健康保險身分住院",
+      "issue_date": "2026-07-23",
+      "hospital_name": "安心綜合醫院"
+    },
+    "medical_receipt": {
+      "hospital_name": "安心綜合醫院",
+      "patient_name": "柯宜庭",
+      "receipt_date": "2026-07-23",
+      "items": [
+        {
+          "item_name": "病房費(第1次)",
+          "amount": "12000"
+        },
+        {
+          "item_name": "藥費(第1次)",
+          "amount": "38000"
+        },
+        {
+          "item_name": "檢驗費(第1次)",
+          "amount": "12000"
+        },
+        {
+          "item_name": "病房費(第2次)",
+          "amount": "10000"
+        },
+        {
+          "item_name": "藥費(第2次)",
+          "amount": "22000"
+        },
+        {
+          "item_name": "檢驗費(第2次)",
+          "amount": "8000"
+        }
+      ],
+      "total_amount": "102000",
+      "is_copy": false
+    },
+    "claim_application": {
+      "applicant_name": "柯宜庭",
+      "policy_number": "POL-C-2026-01",
+      "policy_effective_date": "2025-03-01",
+      "claim_type": "實支實付住院醫療",
+      "application_date": "2026-07-29",
+      "claimed_amount": "102000",
+      "other_insurer_paid": {
+        "room_fee": "0",
+        "surgery_fee": "0",
+        "misc_fee": "0",
+        "ambulance_fee": "0",
+        "unallocated": "0"
+      }
+    },
+    "incident_statement": null
+  }
+}

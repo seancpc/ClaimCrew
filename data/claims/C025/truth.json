@@ -1,0 +1,12 @@
+{
+  "claim_id": "C025",
+  "scenario": "文件缺漏件:缺診斷證明書",
+  "synthetic": true,
+  "decision": "manual_review",
+  "approved_amount": "0",
+  "derivation": "應備文件缺診斷證明書(第25條),依第26條通知補正;Intake 中止不進入判定",
+  "clause_basis": [
+    "POL-A 第25條",
+    "POL-A 第26條"
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "claim_id": "C068",
+  "scenario": "除外責任件:分娩手術含剖腹產(POL-B 第17條;陷阱)",
+  "synthetic": true,
+  "documents": {
+    "diagnosis_certificate": {
+      "patient_name": "游淑娟",
+      "diagnosis": "足月妊娠臀位",
+      "icd_code": "O32.1",
+      "admissions": [
+        {
+          "admission_date": "2026-06-14",
+          "discharge_date": "2026-06-18",
+          "icu_days": "0"
+        }
+      ],
+      "treatment_summary": "胎位不正(臀位),行剖腹產,母嬰均安,無妊娠併發症",
+      "issue_date": "2026-06-18",
+      "hospital_name": "康寧聯合醫院"
+    },
+    "medical_receipt": {
+      "hospital_name": "康寧聯合醫院",
+      "patient_name": "游淑娟",
+      "receipt_date": "2026-06-18",
+      "items": [
+        {
+          "item_name": "病房費",
+          "amount": "10000"
+        },
+        {
+          "item_name": "手術費",
+          "amount": "35000"
+        },
+        {
+          "item_name": "麻醉費",
+          "amount": "8000"
+        },
+        {
+          "item_name": "藥費",
+          "amount": "3200"
+        }
+      ],
+      "total_amount": "56200",
+      "is_copy": false
+    },
+    "claim_application": {
+      "applicant_name": "游淑娟",
+      "policy_number": "POL-B-2026-01",
+      "policy_effective_date": "2024-10-01",
+      "claim_type": "手術醫療",
+      "application_date": "2026-06-24",
+      "claimed_amount": "35000",
+      "other_insurer_paid": {
+        "room_fee": "0",
+        "surgery_fee": "0",
+        "misc_fee": "0",
+        "ambulance_fee": "0",
+        "unallocated": "0"
+      }
+    },
+    "incident_statement": null
+  }
+}

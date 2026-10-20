@@ -1,0 +1,13 @@
+{
+  "claim_id": "C034",
+  "scenario": "實支實付件:POL-C 超限截斷(住院10日)",
+  "synthetic": true,
+  "decision": "approve",
+  "approved_amount": "87000",
+  "derivation": "病房費 min(25000, 3000×10)=25000(第8條);雜費 min(71200, 60000)=60000(第10條);救護車 min(2600, 2000)=2000(第11條);合計 87000",
+  "clause_basis": [
+    "POL-C 第8條",
+    "POL-C 第10條",
+    "POL-C 第11條"
+  ]
+}

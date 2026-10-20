@@ -1,0 +1,12 @@
+{
+  "claim_id": "C006",
+  "scenario": "文件缺漏件:無醫療收據(POL-A 第25條)",
+  "synthetic": true,
+  "decision": "manual_review",
+  "approved_amount": "0",
+  "derivation": "應備文件缺醫療費用收據正本(第25條第三款),應依第26條通知補正;Intake 階段即應中止並產出補件清單,不進入判定",
+  "clause_basis": [
+    "POL-A 第25條",
+    "POL-A 第26條"
+  ]
+}

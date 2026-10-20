@@ -1,0 +1,55 @@
+{
+  "claim_id": "C022",
+  "scenario": "特定疾病等待期未滿件:POL-A",
+  "synthetic": true,
+  "documents": {
+    "diagnosis_certificate": {
+      "patient_name": "葉怡君",
+      "diagnosis": "急性心肌梗塞",
+      "icd_code": "I21.9",
+      "admissions": [
+        {
+          "admission_date": "2026-05-20",
+          "discharge_date": "2026-05-28",
+          "icu_days": "0"
+        }
+      ],
+      "treatment_summary": "心導管治療後出院",
+      "issue_date": "2026-05-28",
+      "hospital_name": "康寧聯合醫院"
+    },
+    "medical_receipt": {
+      "hospital_name": "康寧聯合醫院",
+      "patient_name": "葉怡君",
+      "receipt_date": "2026-05-28",
+      "items": [
+        {
+          "item_name": "病房費",
+          "amount": "18000"
+        },
+        {
+          "item_name": "手術費",
+          "amount": "45000"
+        }
+      ],
+      "total_amount": "63000",
+      "is_copy": false
+    },
+    "claim_application": {
+      "applicant_name": "葉怡君",
+      "policy_number": "POL-A-2026-01",
+      "policy_effective_date": "2026-03-10",
+      "claim_type": "住院醫療",
+      "application_date": "2026-06-03",
+      "claimed_amount": "77000",
+      "other_insurer_paid": {
+        "room_fee": "0",
+        "surgery_fee": "0",
+        "misc_fee": "0",
+        "ambulance_fee": "0",
+        "unallocated": "0"
+      }
+    },
+    "incident_statement": null
+  }
+}

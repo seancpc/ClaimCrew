@@ -1,0 +1,63 @@
+{
+  "claim_id": "C056",
+  "scenario": "等待期未滿件:疾病手術(POL-B 第20條;與 C048 對照)",
+  "synthetic": true,
+  "documents": {
+    "diagnosis_certificate": {
+      "patient_name": "陸冠宇",
+      "diagnosis": "急性闌尾炎",
+      "icd_code": "K35.8",
+      "admissions": [
+        {
+          "admission_date": "2026-04-20",
+          "discharge_date": "2026-04-22",
+          "icu_days": "0"
+        }
+      ],
+      "treatment_summary": "急診確診急性闌尾炎,當日行闌尾切除術",
+      "issue_date": "2026-04-22",
+      "hospital_name": "康寧聯合醫院"
+    },
+    "medical_receipt": {
+      "hospital_name": "康寧聯合醫院",
+      "patient_name": "陸冠宇",
+      "receipt_date": "2026-04-22",
+      "items": [
+        {
+          "item_name": "病房費",
+          "amount": "6000"
+        },
+        {
+          "item_name": "手術費",
+          "amount": "20000"
+        },
+        {
+          "item_name": "麻醉費",
+          "amount": "4000"
+        },
+        {
+          "item_name": "藥費",
+          "amount": "1800"
+        }
+      ],
+      "total_amount": "31800",
+      "is_copy": false
+    },
+    "claim_application": {
+      "applicant_name": "陸冠宇",
+      "policy_number": "POL-B-2026-01",
+      "policy_effective_date": "2026-04-01",
+      "claim_type": "手術醫療",
+      "application_date": "2026-04-28",
+      "claimed_amount": "18000",
+      "other_insurer_paid": {
+        "room_fee": "0",
+        "surgery_fee": "0",
+        "misc_fee": "0",
+        "ambulance_fee": "0",
+        "unallocated": "0"
+      }
+    },
+    "incident_statement": null
+  }
+}

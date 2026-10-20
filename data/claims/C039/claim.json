@@ -1,0 +1,55 @@
+{
+  "claim_id": "C039",
+  "scenario": "除外責任件:POL-A",
+  "synthetic": true,
+  "documents": {
+    "diagnosis_certificate": {
+      "patient_name": "溫雅築",
+      "diagnosis": "慢性牙周病",
+      "icd_code": "K05.30",
+      "admissions": [
+        {
+          "admission_date": "2026-06-22",
+          "discharge_date": "2026-06-23",
+          "icu_days": "0"
+        }
+      ],
+      "treatment_summary": "住院行牙周翻瓣手術",
+      "issue_date": "2026-06-23",
+      "hospital_name": "平安紀念醫院"
+    },
+    "medical_receipt": {
+      "hospital_name": "平安紀念醫院",
+      "patient_name": "溫雅築",
+      "receipt_date": "2026-06-23",
+      "items": [
+        {
+          "item_name": "病房費",
+          "amount": "6000"
+        },
+        {
+          "item_name": "手術費",
+          "amount": "22000"
+        }
+      ],
+      "total_amount": "28000",
+      "is_copy": false
+    },
+    "claim_application": {
+      "applicant_name": "溫雅築",
+      "policy_number": "POL-A-2026-01",
+      "policy_effective_date": "2024-08-15",
+      "claim_type": "住院醫療",
+      "application_date": "2026-06-29",
+      "claimed_amount": "28000",
+      "other_insurer_paid": {
+        "room_fee": "0",
+        "surgery_fee": "0",
+        "misc_fee": "0",
+        "ambulance_fee": "0",
+        "unallocated": "0"
+      }
+    },
+    "incident_statement": null
+  }
+}

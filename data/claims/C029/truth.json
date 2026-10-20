@@ -1,0 +1,13 @@
+{
+  "claim_id": "C029",
+  "scenario": "順利件:POL-B 住院手術第3級(住院5日,慰問上限30日)",
+  "synthetic": true,
+  "decision": "approve",
+  "approved_amount": "35000",
+  "derivation": "住院手術「膽囊切除術」(附錄一第3級)30000(第7條) + 慰問 1000×5(第12條) = 35000",
+  "clause_basis": [
+    "POL-B 第7條",
+    "POL-B 第12條",
+    "POL-B 附錄一"
+  ]
+}

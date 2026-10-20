@@ -1,0 +1,63 @@
+{
+  "claim_id": "C041",
+  "scenario": "收據與診斷不符件:收據「處置費」性質不明,無法歸屬給付項目(POL-C 第26條專條)",
+  "synthetic": true,
+  "documents": {
+    "diagnosis_certificate": {
+      "patient_name": "黃淑芬",
+      "diagnosis": "社區性肺炎",
+      "icd_code": "J18.9",
+      "admissions": [
+        {
+          "admission_date": "2026-06-08",
+          "discharge_date": "2026-06-11",
+          "icu_days": "0"
+        }
+      ],
+      "treatment_summary": "靜脈抗生素、氧氣與支持性治療,未施行手術,以全民健康保險身分住院",
+      "issue_date": "2026-06-11",
+      "hospital_name": "康寧聯合醫院"
+    },
+    "medical_receipt": {
+      "hospital_name": "康寧聯合醫院",
+      "patient_name": "黃淑芬",
+      "receipt_date": "2026-06-11",
+      "items": [
+        {
+          "item_name": "病房費",
+          "amount": "8000"
+        },
+        {
+          "item_name": "藥費",
+          "amount": "3600"
+        },
+        {
+          "item_name": "處置費",
+          "amount": "4000"
+        },
+        {
+          "item_name": "檢驗費",
+          "amount": "2200"
+        }
+      ],
+      "total_amount": "17800",
+      "is_copy": false
+    },
+    "claim_application": {
+      "applicant_name": "黃淑芬",
+      "policy_number": "POL-C-2026-01",
+      "policy_effective_date": "2025-03-01",
+      "claim_type": "實支實付住院醫療",
+      "application_date": "2026-06-17",
+      "claimed_amount": "17800",
+      "other_insurer_paid": {
+        "room_fee": "0",
+        "surgery_fee": "0",
+        "misc_fee": "0",
+        "ambulance_fee": "0",
+        "unallocated": "0"
+      }
+    },
+    "incident_statement": null
+  }
+}

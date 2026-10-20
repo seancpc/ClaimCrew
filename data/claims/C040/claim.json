@@ -1,0 +1,55 @@
+{
+  "claim_id": "C040",
+  "scenario": "未列表手術件:POL-B 射頻消融",
+  "synthetic": true,
+  "documents": {
+    "diagnosis_certificate": {
+      "patient_name": "藍振宇",
+      "diagnosis": "肝腫瘤",
+      "icd_code": "D13.4",
+      "admissions": [
+        {
+          "admission_date": "2026-06-28",
+          "discharge_date": "2026-06-30",
+          "icu_days": "0"
+        }
+      ],
+      "treatment_summary": "行肝腫瘤射頻消融術(經皮微創,未列於手術等級表)",
+      "issue_date": "2026-06-30",
+      "hospital_name": "康寧聯合醫院"
+    },
+    "medical_receipt": {
+      "hospital_name": "康寧聯合醫院",
+      "patient_name": "藍振宇",
+      "receipt_date": "2026-06-30",
+      "items": [
+        {
+          "item_name": "病房費",
+          "amount": "6000"
+        },
+        {
+          "item_name": "手術費",
+          "amount": "52000"
+        }
+      ],
+      "total_amount": "58000",
+      "is_copy": false
+    },
+    "claim_application": {
+      "applicant_name": "藍振宇",
+      "policy_number": "POL-B-2026-01",
+      "policy_effective_date": "2025-04-01",
+      "claim_type": "手術醫療",
+      "application_date": "2026-07-06",
+      "claimed_amount": "30000",
+      "other_insurer_paid": {
+        "room_fee": "0",
+        "surgery_fee": "0",
+        "misc_fee": "0",
+        "ambulance_fee": "0",
+        "unallocated": "0"
+      }
+    },
+    "incident_statement": null
+  }
+}

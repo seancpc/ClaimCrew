@@ -1,0 +1,11 @@
+{
+  "claim_id": "C044",
+  "scenario": "除外責任件:分娩(POL-C 第20條)",
+  "synthetic": true,
+  "decision": "deny",
+  "approved_amount": "0",
+  "derivation": "分娩所致之住院屬第20條除外;逐一比對但書四款(子宮外孕、葡萄胎、前置胎盤、子癲前症及子癇症)皆不該當 → 拒付",
+  "clause_basis": [
+    "POL-C 第20條"
+  ]
+}

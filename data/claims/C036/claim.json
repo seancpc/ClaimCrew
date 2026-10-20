@@ -1,0 +1,71 @@
+{
+  "claim_id": "C036",
+  "scenario": "雜費負面項目件:POL-C(證明書費/掛號費/看護費不計)",
+  "synthetic": true,
+  "documents": {
+    "diagnosis_certificate": {
+      "patient_name": "程冠廷",
+      "diagnosis": "急性腎盂腎炎",
+      "icd_code": "N10",
+      "admissions": [
+        {
+          "admission_date": "2026-07-02",
+          "discharge_date": "2026-07-06",
+          "icu_days": "0"
+        }
+      ],
+      "treatment_summary": "以全民健康保險身分住院,靜脈抗生素治療",
+      "issue_date": "2026-07-06",
+      "hospital_name": "平安紀念醫院"
+    },
+    "medical_receipt": {
+      "hospital_name": "平安紀念醫院",
+      "patient_name": "程冠廷",
+      "receipt_date": "2026-07-06",
+      "items": [
+        {
+          "item_name": "病房費",
+          "amount": "11000"
+        },
+        {
+          "item_name": "藥費",
+          "amount": "12200"
+        },
+        {
+          "item_name": "檢驗費",
+          "amount": "6500"
+        },
+        {
+          "item_name": "診斷證明書費",
+          "amount": "400"
+        },
+        {
+          "item_name": "掛號費",
+          "amount": "150"
+        },
+        {
+          "item_name": "看護費",
+          "amount": "8000"
+        }
+      ],
+      "total_amount": "38250",
+      "is_copy": false
+    },
+    "claim_application": {
+      "applicant_name": "程冠廷",
+      "policy_number": "POL-C-2026-01",
+      "policy_effective_date": "2025-03-05",
+      "claim_type": "實支實付住院醫療",
+      "application_date": "2026-07-12",
+      "claimed_amount": "38250",
+      "other_insurer_paid": {
+        "room_fee": "0",
+        "surgery_fee": "0",
+        "misc_fee": "0",
+        "ambulance_fee": "0",
+        "unallocated": "0"
+      }
+    },
+    "incident_statement": null
+  }
+}

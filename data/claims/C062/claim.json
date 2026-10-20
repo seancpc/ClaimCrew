@@ -1,0 +1,67 @@
+{
+  "claim_id": "C062",
+  "scenario": "除外責任件:犯罪行為所致傷害(POL-B 第13條)",
+  "synthetic": true,
+  "documents": {
+    "diagnosis_certificate": {
+      "patient_name": "柳承恩",
+      "diagnosis": "左跟骨骨折",
+      "icd_code": "S92.001",
+      "admissions": [
+        {
+          "admission_date": "2026-05-03",
+          "discharge_date": "2026-05-06",
+          "icu_days": "0"
+        }
+      ],
+      "treatment_summary": "自高處墜落致左跟骨骨折,行骨折開放復位內固定術",
+      "issue_date": "2026-05-06",
+      "hospital_name": "安心綜合醫院"
+    },
+    "medical_receipt": {
+      "hospital_name": "安心綜合醫院",
+      "patient_name": "柳承恩",
+      "receipt_date": "2026-05-06",
+      "items": [
+        {
+          "item_name": "病房費",
+          "amount": "8000"
+        },
+        {
+          "item_name": "手術費",
+          "amount": "30000"
+        },
+        {
+          "item_name": "麻醉費",
+          "amount": "6000"
+        },
+        {
+          "item_name": "藥費",
+          "amount": "2500"
+        }
+      ],
+      "total_amount": "46500",
+      "is_copy": false
+    },
+    "claim_application": {
+      "applicant_name": "柳承恩",
+      "policy_number": "POL-B-2026-01",
+      "policy_effective_date": "2025-01-10",
+      "claim_type": "手術醫療",
+      "application_date": "2026-05-12",
+      "claimed_amount": "34000",
+      "other_insurer_paid": {
+        "room_fee": "0",
+        "surgery_fee": "0",
+        "misc_fee": "0",
+        "ambulance_fee": "0",
+        "unallocated": "0"
+      }
+    },
+    "incident_statement": {
+      "source": "police_record",
+      "incident_date": "2026-05-03",
+      "statement_text": "2026-05-03 當事人侵入他人住宅行竊,遭屋主發現後自二樓陽台跳下逃逸致傷,經警方到場逮捕並移送偵辦;當事人送醫治療。"
+    }
+  }
+}

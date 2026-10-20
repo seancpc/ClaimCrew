@@ -1,0 +1,12 @@
+{
+  "claim_id": "C022",
+  "scenario": "特定疾病等待期未滿件:POL-A",
+  "synthetic": true,
+  "decision": "deny",
+  "approved_amount": "0",
+  "derivation": "缺血性心臟病屬附錄二特定疾病;生效 2026-03-10 至住院 2026-05-20 僅 71 日,未滿 90 日延長等待期(第23條)",
+  "clause_basis": [
+    "POL-A 第23條",
+    "POL-A 附錄二"
+  ]
+}

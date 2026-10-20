@@ -1,0 +1,55 @@
+{
+  "claim_id": "C012",
+  "scenario": "順利件:POL-A 住院 7 日",
+  "synthetic": true,
+  "documents": {
+    "diagnosis_certificate": {
+      "patient_name": "鄭雅文",
+      "diagnosis": "泌尿道感染",
+      "icd_code": "N39.0",
+      "admissions": [
+        {
+          "admission_date": "2026-04-02",
+          "discharge_date": "2026-04-08",
+          "icu_days": "0"
+        }
+      ],
+      "treatment_summary": "靜脈抗生素治療",
+      "issue_date": "2026-04-08",
+      "hospital_name": "平安紀念醫院"
+    },
+    "medical_receipt": {
+      "hospital_name": "平安紀念醫院",
+      "patient_name": "鄭雅文",
+      "receipt_date": "2026-04-08",
+      "items": [
+        {
+          "item_name": "病房費",
+          "amount": "10500"
+        },
+        {
+          "item_name": "藥費",
+          "amount": "6300"
+        }
+      ],
+      "total_amount": "16800",
+      "is_copy": false
+    },
+    "claim_application": {
+      "applicant_name": "鄭雅文",
+      "policy_number": "POL-A-2026-01",
+      "policy_effective_date": "2024-10-01",
+      "claim_type": "住院醫療",
+      "application_date": "2026-04-14",
+      "claimed_amount": "21000",
+      "other_insurer_paid": {
+        "room_fee": "0",
+        "surgery_fee": "0",
+        "misc_fee": "0",
+        "ambulance_fee": "0",
+        "unallocated": "0"
+      }
+    },
+    "incident_statement": null
+  }
+}

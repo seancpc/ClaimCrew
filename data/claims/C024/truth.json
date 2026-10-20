@@ -1,0 +1,12 @@
+{
+  "claim_id": "C024",
+  "scenario": "既往症拒付件:POL-A",
+  "synthetic": true,
+  "decision": "deny",
+  "approved_amount": "0",
+  "derivation": "診斷書載明「肝硬化併腹水」於投保(2024-11-15)前已確診並長期門診追蹤,屬投保前二年內已就診之既往症及其併發症(第2條、第18條)",
+  "clause_basis": [
+    "POL-A 第2條",
+    "POL-A 第18條"
+  ]
+}

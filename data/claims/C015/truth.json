@@ -1,0 +1,14 @@
+{
+  "claim_id": "C015",
+  "scenario": "順利件:POL-A 住院+第1級手術",
+  "synthetic": true,
+  "decision": "approve",
+  "approved_amount": "22000",
+  "derivation": "含入出院日 4 日;日額 2000×4 + 輔助 1000×4(第11條) + 手術「闌尾切除術」屬附錄一第1級 10000(第10條) = 22000",
+  "clause_basis": [
+    "POL-A 第7條",
+    "POL-A 第10條",
+    "POL-A 第11條",
+    "POL-A 附錄一"
+  ]
+}

@@ -1,0 +1,29 @@
+# 檢測工具設定單一來源(稽核 C23)。工具版本釘於 requirements-dev.txt,一律 python3 -m 呼叫。
+[tool.mypy]
+python_version = "3.11"
+strict = true
+files = ["app", "eval"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM"]
+[tool.ruff.lint.per-file-ignores]
+# 凍結真值推導式為長字串資料,不因行長折行(折行會讓 diff 失去可讀性)
+"app/datagen/cases.py" = ["E501"]
+"app/datagen/variants.py" = ["E501"]
+
+# RUF001-003(全形標點「,」「;」)為中文註解刻意使用,不啟用 RUF
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.coverage.run]
+branch = true
+source = ["app", "eval"]
+
+[tool.coverage.report]
+fail_under = 80  # 現況 84%(C25 後);退步即 gauntlet 失敗
+show_missing = true

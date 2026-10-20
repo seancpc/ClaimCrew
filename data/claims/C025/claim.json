@@ -1,0 +1,41 @@
+{
+  "claim_id": "C025",
+  "scenario": "文件缺漏件:缺診斷證明書",
+  "synthetic": true,
+  "documents": {
+    "diagnosis_certificate": null,
+    "medical_receipt": {
+      "hospital_name": "康寧聯合醫院",
+      "patient_name": "蘇明輝",
+      "receipt_date": "2026-05-08",
+      "items": [
+        {
+          "item_name": "病房費",
+          "amount": "4500"
+        },
+        {
+          "item_name": "手術費",
+          "amount": "15000"
+        }
+      ],
+      "total_amount": "19500",
+      "is_copy": false
+    },
+    "claim_application": {
+      "applicant_name": "蘇明輝",
+      "policy_number": "POL-A-2026-01",
+      "policy_effective_date": "2024-12-01",
+      "claim_type": "住院醫療",
+      "application_date": "2026-05-14",
+      "claimed_amount": "24000",
+      "other_insurer_paid": {
+        "room_fee": "0",
+        "surgery_fee": "0",
+        "misc_fee": "0",
+        "ambulance_fee": "0",
+        "unallocated": "0"
+      }
+    },
+    "incident_statement": null
+  }
+}

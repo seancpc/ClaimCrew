@@ -1,0 +1,59 @@
+{
+  "claim_id": "C009",
+  "scenario": "收據與診斷不符件:收據病房費日數多於診斷書住院日數(POL-A)",
+  "synthetic": true,
+  "documents": {
+    "diagnosis_certificate": {
+      "patient_name": "許雅婷",
+      "diagnosis": "急性腸胃炎",
+      "icd_code": "K52.9",
+      "admissions": [
+        {
+          "admission_date": "2026-05-15",
+          "discharge_date": "2026-05-16",
+          "icu_days": "0"
+        }
+      ],
+      "treatment_summary": "靜脈輸液與止瀉治療,症狀緩解後翌日出院",
+      "issue_date": "2026-05-16",
+      "hospital_name": "平安紀念醫院"
+    },
+    "medical_receipt": {
+      "hospital_name": "平安紀念醫院",
+      "patient_name": "許雅婷",
+      "receipt_date": "2026-05-16",
+      "items": [
+        {
+          "item_name": "病房費(5日)",
+          "amount": "7500"
+        },
+        {
+          "item_name": "藥費",
+          "amount": "2400"
+        },
+        {
+          "item_name": "檢驗費",
+          "amount": "1800"
+        }
+      ],
+      "total_amount": "11700",
+      "is_copy": false
+    },
+    "claim_application": {
+      "applicant_name": "許雅婷",
+      "policy_number": "POL-A-2026-01",
+      "policy_effective_date": "2025-01-20",
+      "claim_type": "住院醫療",
+      "application_date": "2026-05-22",
+      "claimed_amount": "15000",
+      "other_insurer_paid": {
+        "room_fee": "0",
+        "surgery_fee": "0",
+        "misc_fee": "0",
+        "ambulance_fee": "0",
+        "unallocated": "0"
+      }
+    },
+    "incident_statement": null
+  }
+}

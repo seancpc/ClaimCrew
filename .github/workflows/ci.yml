@@ -1,0 +1,63 @@
+name: CI
+
+on:
+  push:
+    branches: [development, main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  gauntlet:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: requirements*.txt
+      - name: CJK 字型(test_datagen 的 PDF 文字層抽取需 wqy-zenhei;runner 預設無中文字型,缺字型時 pdfplumber 抽回亂碼,見 CLAUDE.md D3.5)
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq fonts-wqy-zenhei
+      - name: Install pinned deps
+        run: |
+          pip install -r requirements.txt -r requirements-dev.txt
+      - name: Gauntlet(tests + coverage + types + lint + audit + mutation + selfcheck)
+        run: bash tools/gauntlet.sh
+
+  bicep:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Bicep CLI(釘版)
+        run: |
+          curl -sSL -o bicep https://github.com/Azure/bicep/releases/download/v0.36.1/bicep-linux-x64
+          chmod +x bicep
+      - name: Bicep build(0 errors 且 0 warnings 才通過)
+        run: |
+          ./bicep build infra/bicep/main.bicep --outfile main.json 2> bicep.log || { cat bicep.log; exit 1; }
+          if grep -q "Warning" bicep.log; then cat bicep.log; echo "Bicep 有 warning"; exit 1; fi
+      - name: ARM 結構斷言(SPEC-ah:事件觸發 / 告警不變式)
+        run: python3 tools/bicep_check.py main.json
+
+  image:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Docker build(SPEC-t 映像;tag = git SHA 前 7 碼)
+        run: docker build --build-arg GIT_SHA=${GITHUB_SHA::7} -t claimcrew:${GITHUB_SHA::7} .
+      - name: 容器內 eval selfcheck(映像含 prompt / 條款 / 合成案,且非 root)
+        run: |
+          docker run --rm --entrypoint python claimcrew:${GITHUB_SHA::7} -m eval.run_eval --selfcheck
+          docker run --rm --entrypoint id claimcrew:${GITHUB_SHA::7} -u | grep -qx 10001
+      - name: 映像不含秘密與排除目錄
+        run: |
+          docker run --rm --entrypoint sh claimcrew:${GITHUB_SHA::7} -c 'test ! -e check && test ! -e tests && test ! -e .git && test -z "$DI_KEY$AOAI_KEY$REVIEW_WEBHOOK_URL"'

@@ -1,0 +1,59 @@
+{
+  "claim_id": "C057",
+  "scenario": "等待期未滿件:疾病住院(POL-C 第23條)",
+  "synthetic": true,
+  "documents": {
+    "diagnosis_certificate": {
+      "patient_name": "羅欣怡",
+      "diagnosis": "急性腸胃炎",
+      "icd_code": "K52.9",
+      "admissions": [
+        {
+          "admission_date": "2026-05-25",
+          "discharge_date": "2026-05-27",
+          "icu_days": "0"
+        }
+      ],
+      "treatment_summary": "靜脈輸液與止瀉治療,以全民健康保險身分住院",
+      "issue_date": "2026-05-27",
+      "hospital_name": "安心綜合醫院"
+    },
+    "medical_receipt": {
+      "hospital_name": "安心綜合醫院",
+      "patient_name": "羅欣怡",
+      "receipt_date": "2026-05-27",
+      "items": [
+        {
+          "item_name": "病房費",
+          "amount": "6000"
+        },
+        {
+          "item_name": "藥費",
+          "amount": "2100"
+        },
+        {
+          "item_name": "檢驗費",
+          "amount": "1600"
+        }
+      ],
+      "total_amount": "9700",
+      "is_copy": false
+    },
+    "claim_application": {
+      "applicant_name": "羅欣怡",
+      "policy_number": "POL-C-2026-01",
+      "policy_effective_date": "2026-05-01",
+      "claim_type": "實支實付住院醫療",
+      "application_date": "2026-06-02",
+      "claimed_amount": "9700",
+      "other_insurer_paid": {
+        "room_fee": "0",
+        "surgery_fee": "0",
+        "misc_fee": "0",
+        "ambulance_fee": "0",
+        "unallocated": "0"
+      }
+    },
+    "incident_statement": null
+  }
+}

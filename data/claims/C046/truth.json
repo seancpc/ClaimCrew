@@ -1,0 +1,11 @@
+{
+  "claim_id": "C046",
+  "scenario": "除外責任件:牙科手術(POL-B 第18條)",
+  "synthetic": true,
+  "decision": "deny",
+  "approved_amount": "0",
+  "derivation": "阻生齒拔除屬牙科處置所接受之手術,依第18條除外;診斷書明載非外傷,但書不成立 → 拒付。術式雖未列附錄一,除外責任優先於給付要件,無須進入第11條未列表手術之核定",
+  "clause_basis": [
+    "POL-B 第18條"
+  ]
+}

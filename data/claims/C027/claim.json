@@ -1,0 +1,55 @@
+{
+  "claim_id": "C027",
+  "scenario": "順利件:POL-B 門診手術第2級",
+  "synthetic": true,
+  "documents": {
+    "diagnosis_certificate": {
+      "patient_name": "江柏翰",
+      "diagnosis": "白內障",
+      "icd_code": "H25.9",
+      "admissions": [
+        {
+          "admission_date": "2026-04-22",
+          "discharge_date": "2026-04-22",
+          "icu_days": "0"
+        }
+      ],
+      "treatment_summary": "行白內障晶體置換術(門診)",
+      "issue_date": "2026-04-22",
+      "hospital_name": "平安紀念醫院"
+    },
+    "medical_receipt": {
+      "hospital_name": "平安紀念醫院",
+      "patient_name": "江柏翰",
+      "receipt_date": "2026-04-22",
+      "items": [
+        {
+          "item_name": "手術費",
+          "amount": "40000"
+        },
+        {
+          "item_name": "麻醉費",
+          "amount": "2000"
+        }
+      ],
+      "total_amount": "42000",
+      "is_copy": false
+    },
+    "claim_application": {
+      "applicant_name": "江柏翰",
+      "policy_number": "POL-B-2026-01",
+      "policy_effective_date": "2025-01-15",
+      "claim_type": "手術醫療",
+      "application_date": "2026-04-28",
+      "claimed_amount": "7500",
+      "other_insurer_paid": {
+        "room_fee": "0",
+        "surgery_fee": "0",
+        "misc_fee": "0",
+        "ambulance_fee": "0",
+        "unallocated": "0"
+      }
+    },
+    "incident_statement": null
+  }
+}

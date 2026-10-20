@@ -1,0 +1,59 @@
+{
+  "claim_id": "C030",
+  "scenario": "順利件:POL-B 住院手術第5級(住院37日,慰問上限30日)",
+  "synthetic": true,
+  "documents": {
+    "diagnosis_certificate": {
+      "patient_name": "施雅惠",
+      "diagnosis": "冠狀動脈三條血管疾病",
+      "icd_code": "I25.10",
+      "admissions": [
+        {
+          "admission_date": "2026-05-25",
+          "discharge_date": "2026-06-30",
+          "icu_days": "0"
+        }
+      ],
+      "treatment_summary": "行冠狀動脈繞道手術,術後復健,住院37日",
+      "issue_date": "2026-06-30",
+      "hospital_name": "平安紀念醫院"
+    },
+    "medical_receipt": {
+      "hospital_name": "平安紀念醫院",
+      "patient_name": "施雅惠",
+      "receipt_date": "2026-06-30",
+      "items": [
+        {
+          "item_name": "病房費",
+          "amount": "74000"
+        },
+        {
+          "item_name": "手術費",
+          "amount": "150000"
+        },
+        {
+          "item_name": "麻醉費",
+          "amount": "8000"
+        }
+      ],
+      "total_amount": "232000",
+      "is_copy": false
+    },
+    "claim_application": {
+      "applicant_name": "施雅惠",
+      "policy_number": "POL-B-2026-01",
+      "policy_effective_date": "2024-11-10",
+      "claim_type": "手術醫療",
+      "application_date": "2026-07-06",
+      "claimed_amount": "130000",
+      "other_insurer_paid": {
+        "room_fee": "0",
+        "surgery_fee": "0",
+        "misc_fee": "0",
+        "ambulance_fee": "0",
+        "unallocated": "0"
+      }
+    },
+    "incident_statement": null
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "claim_id": "C010",
+  "scenario": "非健保身分+雜費負面項目件(POL-C 第10、12條)",
+  "synthetic": true,
+  "documents": {
+    "diagnosis_certificate": {
+      "patient_name": "蔡明哲",
+      "diagnosis": "腰椎椎間盤突出",
+      "icd_code": "M51.26",
+      "admissions": [
+        {
+          "admission_date": "2026-06-08",
+          "discharge_date": "2026-06-12",
+          "icu_days": "0"
+        }
+      ],
+      "treatment_summary": "保守治療,自費身分入住非健保特約醫院",
+      "issue_date": "2026-06-12",
+      "hospital_name": "康泰醫院(非健保特約)"
+    },
+    "medical_receipt": {
+      "hospital_name": "康泰醫院",
+      "patient_name": "蔡明哲",
+      "receipt_date": "2026-06-12",
+      "items": [
+        {
+          "item_name": "病房費",
+          "amount": "16000"
+        },
+        {
+          "item_name": "藥費",
+          "amount": "12000"
+        },
+        {
+          "item_name": "復健治療費",
+          "amount": "13000"
+        },
+        {
+          "item_name": "診斷證明書費",
+          "amount": "500"
+        },
+        {
+          "item_name": "掛號費",
+          "amount": "150"
+        }
+      ],
+      "total_amount": "41650",
+      "is_copy": false
+    },
+    "claim_application": {
+      "applicant_name": "蔡明哲",
+      "policy_number": "POL-C-2026-01",
+      "policy_effective_date": "2024-12-01",
+      "claim_type": "實支實付住院醫療",
+      "application_date": "2026-06-18",
+      "claimed_amount": "41650",
+      "other_insurer_paid": {
+        "room_fee": "0",
+        "surgery_fee": "0",
+        "misc_fee": "0",
+        "ambulance_fee": "0",
+        "unallocated": "0"
+      }
+    },
+    "incident_statement": null
+  }
+}

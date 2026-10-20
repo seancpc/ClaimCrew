@@ -1,0 +1,12 @@
+{
+  "claim_id": "C005",
+  "scenario": "既往症拒付件(POL-A 第18條)",
+  "synthetic": true,
+  "decision": "deny",
+  "approved_amount": "0",
+  "derivation": "診斷書載明糖尿病病史五年、長期門診追蹤,投保(2025-09-01)前二年內已接受診療,屬既往症;本次住院為糖尿病之併發症(第2條第五款、第18條)→ 不給付",
+  "clause_basis": [
+    "POL-A 第2條",
+    "POL-A 第18條"
+  ]
+}

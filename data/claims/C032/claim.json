@@ -1,0 +1,55 @@
+{
+  "claim_id": "C032",
+  "scenario": "實支實付件:POL-C 限額內(住院8日)",
+  "synthetic": true,
+  "documents": {
+    "diagnosis_certificate": {
+      "patient_name": "唐佳蓉",
+      "diagnosis": "急性胰臟炎",
+      "icd_code": "K85.90",
+      "admissions": [
+        {
+          "admission_date": "2026-03-12",
+          "discharge_date": "2026-03-19",
+          "icu_days": "0"
+        }
+      ],
+      "treatment_summary": "以全民健康保險身分住院診療",
+      "issue_date": "2026-03-19",
+      "hospital_name": "安心綜合醫院"
+    },
+    "medical_receipt": {
+      "hospital_name": "安心綜合醫院",
+      "patient_name": "唐佳蓉",
+      "receipt_date": "2026-03-19",
+      "items": [
+        {
+          "item_name": "病房費",
+          "amount": "22400"
+        },
+        {
+          "item_name": "醫療雜費",
+          "amount": "31000"
+        }
+      ],
+      "total_amount": "53400",
+      "is_copy": false
+    },
+    "claim_application": {
+      "applicant_name": "唐佳蓉",
+      "policy_number": "POL-C-2026-01",
+      "policy_effective_date": "2024-07-20",
+      "claim_type": "實支實付住院醫療",
+      "application_date": "2026-03-25",
+      "claimed_amount": "53400",
+      "other_insurer_paid": {
+        "room_fee": "0",
+        "surgery_fee": "0",
+        "misc_fee": "0",
+        "ambulance_fee": "0",
+        "unallocated": "0"
+      }
+    },
+    "incident_statement": null
+  }
+}

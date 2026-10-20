@@ -1,0 +1,55 @@
+{
+  "claim_id": "C038",
+  "scenario": "除外責任件:POL-B",
+  "synthetic": true,
+  "documents": {
+    "diagnosis_certificate": {
+      "patient_name": "夏志豪",
+      "diagnosis": "雙側眼瞼下垂(美容目的)",
+      "icd_code": "H02.401",
+      "admissions": [
+        {
+          "admission_date": "2026-04-08",
+          "discharge_date": "2026-04-08",
+          "icu_days": "0"
+        }
+      ],
+      "treatment_summary": "行雙眼皮整形手術(非疾病治療必要)",
+      "issue_date": "2026-04-08",
+      "hospital_name": "安心綜合醫院"
+    },
+    "medical_receipt": {
+      "hospital_name": "安心綜合醫院",
+      "patient_name": "夏志豪",
+      "receipt_date": "2026-04-08",
+      "items": [
+        {
+          "item_name": "病房費",
+          "amount": "6000"
+        },
+        {
+          "item_name": "手術費",
+          "amount": "22000"
+        }
+      ],
+      "total_amount": "28000",
+      "is_copy": false
+    },
+    "claim_application": {
+      "applicant_name": "夏志豪",
+      "policy_number": "POL-B-2026-01",
+      "policy_effective_date": "2024-08-15",
+      "claim_type": "手術醫療",
+      "application_date": "2026-04-14",
+      "claimed_amount": "28000",
+      "other_insurer_paid": {
+        "room_fee": "0",
+        "surgery_fee": "0",
+        "misc_fee": "0",
+        "ambulance_fee": "0",
+        "unallocated": "0"
+      }
+    },
+    "incident_statement": null
+  }
+}

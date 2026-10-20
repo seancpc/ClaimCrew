@@ -1,0 +1,59 @@
+{
+  "claim_id": "C017",
+  "scenario": "順利件:POL-A 住院+第3級手術",
+  "synthetic": true,
+  "documents": {
+    "diagnosis_certificate": {
+      "patient_name": "賴冠宇",
+      "diagnosis": "退化性髖關節炎",
+      "icd_code": "M16.1",
+      "admissions": [
+        {
+          "admission_date": "2026-06-10",
+          "discharge_date": "2026-06-21",
+          "icu_days": "0"
+        }
+      ],
+      "treatment_summary": "行全髖關節置換術",
+      "issue_date": "2026-06-21",
+      "hospital_name": "安心綜合醫院"
+    },
+    "medical_receipt": {
+      "hospital_name": "安心綜合醫院",
+      "patient_name": "賴冠宇",
+      "receipt_date": "2026-06-21",
+      "items": [
+        {
+          "item_name": "病房費",
+          "amount": "18000"
+        },
+        {
+          "item_name": "手術費",
+          "amount": "48000"
+        },
+        {
+          "item_name": "藥費",
+          "amount": "9600"
+        }
+      ],
+      "total_amount": "75600",
+      "is_copy": false
+    },
+    "claim_application": {
+      "applicant_name": "賴冠宇",
+      "policy_number": "POL-A-2026-01",
+      "policy_effective_date": "2024-06-15",
+      "claim_type": "住院醫療",
+      "application_date": "2026-06-27",
+      "claimed_amount": "86000",
+      "other_insurer_paid": {
+        "room_fee": "0",
+        "surgery_fee": "0",
+        "misc_fee": "0",
+        "ambulance_fee": "0",
+        "unallocated": "0"
+      }
+    },
+    "incident_statement": null
+  }
+}

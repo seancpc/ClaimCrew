@@ -1,0 +1,19 @@
+# 映像只收執行需要的檔案;金鑰/輸出/快取/測試/文件一律排除
+.git
+.github
+.venv
+check
+docs
+tests
+infra
+data/di_training
+**/__pycache__
+**/*.pyc
+.pytest_cache
+.mypy_cache
+.ruff_cache
+.hypothesis
+.coverage
+htmlcov
+.env
+.env.*
