@@ -1,8 +1,8 @@
-# ClaimCrew
+﻿# ClaimCrew
 
 **Azure 全託管醫療保險理賠多代理審核系統** — 文件抽取 → 條款比對(帶引用)→ 初審判定 → 人工覆核路由。全合成資料、零 PHI、零自建基礎設施。
 
-> 🎬 Demo 影片(約 4.5 分鐘,中英字幕):https://youtu.be/emzxXhkF_Tk
+> 🎬 Demo 影片(約 7 分鐘,中英字幕):https://youtu.be/emzxXhkF_Tk
 >
 > 完整規格見 [`ClaimCrew_PROJECT_SPEC.md`](ClaimCrew_PROJECT_SPEC.md)。本頁追蹤開發進度與 Azure 接入路線。
 
