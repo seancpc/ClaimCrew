@@ -175,13 +175,13 @@
 ### Phase 3:包裝與變現(第 6–8 週)
 - [ ] ~~App Insights 儀表整理~~ + 成本月報截圖(2026-10-11 縮小範圍:程式本身無遙測(G3),儀表無內容可呈現 → 只截成本分析與 Job 失敗告警,拆除前完成)
 - [x] ADR 定稿(英文)— ADR-001~010 全英文(2026-10-19 ADR-009/010 英譯);E11 Agent Service 邊界寫入 ADR-008 附錄
-- [ ] GitHub Pages 專案頁(中英)— 檔案已完成(`docs/index.html` / `index.en.html`);**啟用待 repo 搬至主帳號後執行**
+- [x] GitHub Pages 專案頁(中英)— 2026-10-20 啟用:https://seancpc.github.io/ClaimCrew/
 - [x] Demo 影片 — 2026-10-16 上傳 https://youtu.be/emzxXhkF_Tk
 - [ ] 英文文章 #1(2026-10-11 改列選做);Build Log 收尾統計
 - [x] Bicep 全拆驗證(拆除 → 重建 → demo 可跑,計時)— 2026-10-08 ⑧:拆除 27 分、重建遇 3 個真部署坑後完成,事件觸發 + 告警真實觸發驗證(EVIDENCE 44);v16 / v17 全量於重建後環境跑完
 - [ ] **重建 Runbook + 預期漂移清單**(支撐「平時 $0、面試前重建」模式,見 §10 交付物)— 重建步驟已實測並記於 `docs/runbook.md`(桌機坑 W1–W25);剩「長期停放漂移清單」獨立段落
 
-**收尾清單(2026-10-11 定案,依序)**:①SPEC 回填 ✓ ②拆除前:成本 / 告警截圖、Demo 影片 ✓(2026-10-16 上傳 https://youtu.be/emzxXhkF_Tk)③全拆 ✓(2026-10-16,15:09,EVIDENCE 49;B6 費用歸零截圖待隔日) ④Runbook 漂移清單 ✓(2026-10-16,`docs/runbook.md` §7:預檢指令 + D1~D17 + 重建驗收) ⑤ADR-009/010 英譯 + E11 ✓(2026-10-19) ⑥公開前掃描 → repo 搬主帳號並 public(使用者操作)→ Pages 內容更新並啟用 ⑦Build Log 收尾統計 ✓(2026-10-19,`docs/build-log.md` 末段;文章選做)
+**收尾清單(2026-10-11 定案,依序)**:①SPEC 回填 ✓ ②拆除前:成本 / 告警截圖、Demo 影片 ✓(2026-10-16 上傳 https://youtu.be/emzxXhkF_Tk)③全拆 ✓(2026-10-16,15:09,EVIDENCE 49;B6 費用歸零截圖待隔日) ④Runbook 漂移清單 ✓(2026-10-16,`docs/runbook.md` §7:預檢指令 + D1~D17 + 重建驗收) ⑤ADR-009/010 英譯 + E11 ✓(2026-10-19) ⑥公開前掃描 → repo 搬主帳號並 public → Pages 內容更新並啟用 ✓(2026-10-20,公開 repo `seancpc/ClaimCrew` 單一起始 commit、CI 全綠、Pages 上線) ⑦Build Log 收尾統計 ✓(2026-10-19,`docs/build-log.md` 末段;文章選做)
 
 ### Phase 3 補強計畫(2026-10-07 盤點;成本為估計,實際以帳單為準)
 
