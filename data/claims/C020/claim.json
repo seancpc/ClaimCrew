@@ -1,0 +1,55 @@
+{
+  "claim_id": "C020",
+  "scenario": "等待期未滿件:POL-A",
+  "synthetic": true,
+  "documents": {
+    "diagnosis_certificate": {
+      "patient_name": "游雅萍",
+      "diagnosis": "急性咽喉炎併扁桃腺膿瘍",
+      "icd_code": "J36",
+      "admissions": [
+        {
+          "admission_date": "2026-04-10",
+          "discharge_date": "2026-04-13",
+          "icu_days": "0"
+        }
+      ],
+      "treatment_summary": "住院治療後出院",
+      "issue_date": "2026-04-13",
+      "hospital_name": "安心綜合醫院"
+    },
+    "medical_receipt": {
+      "hospital_name": "安心綜合醫院",
+      "patient_name": "游雅萍",
+      "receipt_date": "2026-04-13",
+      "items": [
+        {
+          "item_name": "病房費",
+          "amount": "6000"
+        },
+        {
+          "item_name": "藥費",
+          "amount": "2500"
+        }
+      ],
+      "total_amount": "8500",
+      "is_copy": false
+    },
+    "claim_application": {
+      "applicant_name": "游雅萍",
+      "policy_number": "POL-A-2026-01",
+      "policy_effective_date": "2026-03-25",
+      "claim_type": "住院醫療",
+      "application_date": "2026-04-19",
+      "claimed_amount": "12000",
+      "other_insurer_paid": {
+        "room_fee": "0",
+        "surgery_fee": "0",
+        "misc_fee": "0",
+        "ambulance_fee": "0",
+        "unallocated": "0"
+      }
+    },
+    "incident_statement": null
+  }
+}

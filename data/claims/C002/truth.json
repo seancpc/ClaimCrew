@@ -1,0 +1,14 @@
+{
+  "claim_id": "C002",
+  "scenario": "順利件:疾病住院含手術(POL-A)",
+  "synthetic": true,
+  "decision": "approve",
+  "approved_amount": "40000",
+  "derivation": "住院 4/10~4/14 含入出院日共 5 日;日額 2000×5 + 輔助 1000×5 = 15,000;膽囊切除術為附錄一第二級 25,000(第10條);合計 40,000",
+  "clause_basis": [
+    "POL-A 第7條",
+    "POL-A 第10條",
+    "POL-A 第11條",
+    "POL-A 附錄一"
+  ]
+}

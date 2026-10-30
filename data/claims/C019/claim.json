@@ -1,0 +1,59 @@
+{
+  "claim_id": "C019",
+  "scenario": "金額計算件:POL-A 含 ICU 7 日",
+  "synthetic": true,
+  "documents": {
+    "diagnosis_certificate": {
+      "patient_name": "潘志偉",
+      "diagnosis": "急性呼吸衰竭",
+      "icd_code": "J96.00",
+      "admissions": [
+        {
+          "admission_date": "2026-05-15",
+          "discharge_date": "2026-06-03",
+          "icu_days": "7"
+        }
+      ],
+      "treatment_summary": "插管治療,加護病房七日,共住院20日",
+      "issue_date": "2026-06-03",
+      "hospital_name": "康寧聯合醫院"
+    },
+    "medical_receipt": {
+      "hospital_name": "康寧聯合醫院",
+      "patient_name": "潘志偉",
+      "receipt_date": "2026-06-03",
+      "items": [
+        {
+          "item_name": "病房費",
+          "amount": "40000"
+        },
+        {
+          "item_name": "加護病房費",
+          "amount": "56000"
+        },
+        {
+          "item_name": "藥費",
+          "amount": "24000"
+        }
+      ],
+      "total_amount": "120000",
+      "is_copy": false
+    },
+    "claim_application": {
+      "applicant_name": "潘志偉",
+      "policy_number": "POL-A-2026-01",
+      "policy_effective_date": "2024-09-01",
+      "claim_type": "住院醫療",
+      "application_date": "2026-06-09",
+      "claimed_amount": "74000",
+      "other_insurer_paid": {
+        "room_fee": "0",
+        "surgery_fee": "0",
+        "misc_fee": "0",
+        "ambulance_fee": "0",
+        "unallocated": "0"
+      }
+    },
+    "incident_statement": null
+  }
+}

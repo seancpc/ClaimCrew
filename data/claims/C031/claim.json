@@ -1,0 +1,55 @@
+{
+  "claim_id": "C031",
+  "scenario": "診斷性處置件:POL-B 大腸鏡瘜肉切除",
+  "synthetic": true,
+  "documents": {
+    "diagnosis_certificate": {
+      "patient_name": "宋志明",
+      "diagnosis": "大腸瘜肉",
+      "icd_code": "K63.5",
+      "admissions": [
+        {
+          "admission_date": "2026-04-30",
+          "discharge_date": "2026-04-30",
+          "icu_days": "0"
+        }
+      ],
+      "treatment_summary": "行大腸鏡檢查,發現瘜肉並於檢查中切除送驗",
+      "issue_date": "2026-04-30",
+      "hospital_name": "康寧聯合醫院"
+    },
+    "medical_receipt": {
+      "hospital_name": "康寧聯合醫院",
+      "patient_name": "宋志明",
+      "receipt_date": "2026-04-30",
+      "items": [
+        {
+          "item_name": "檢查費",
+          "amount": "9000"
+        },
+        {
+          "item_name": "病理費",
+          "amount": "1500"
+        }
+      ],
+      "total_amount": "10500",
+      "is_copy": false
+    },
+    "claim_application": {
+      "applicant_name": "宋志明",
+      "policy_number": "POL-B-2026-01",
+      "policy_effective_date": "2025-02-01",
+      "claim_type": "手術醫療",
+      "application_date": "2026-05-06",
+      "claimed_amount": "15000",
+      "other_insurer_paid": {
+        "room_fee": "0",
+        "surgery_fee": "0",
+        "misc_fee": "0",
+        "ambulance_fee": "0",
+        "unallocated": "0"
+      }
+    },
+    "incident_statement": null
+  }
+}

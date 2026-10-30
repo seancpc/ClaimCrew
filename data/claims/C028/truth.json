@@ -1,0 +1,12 @@
+{
+  "claim_id": "C028",
+  "scenario": "順利件:POL-B 門診手術第1級",
+  "synthetic": true,
+  "decision": "approve",
+  "approved_amount": "2500",
+  "derivation": "門診手術「脂肪瘤切除術」(附錄一第1級)5000×50%(第8條) = 2500",
+  "clause_basis": [
+    "POL-B 第8條",
+    "POL-B 附錄一"
+  ]
+}

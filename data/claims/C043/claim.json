@@ -1,0 +1,63 @@
+{
+  "claim_id": "C043",
+  "scenario": "除外責任件:美容整形+非健保身分陷阱(POL-C 第18條)",
+  "synthetic": true,
+  "documents": {
+    "diagnosis_certificate": {
+      "patient_name": "邱雅玲",
+      "diagnosis": "眼瞼下垂(輕度,無視野缺損)",
+      "icd_code": "H02.409",
+      "admissions": [
+        {
+          "admission_date": "2026-05-20",
+          "discharge_date": "2026-05-21",
+          "icu_days": "0"
+        }
+      ],
+      "treatment_summary": "應病患要求行雙側上眼瞼整形術(美容目的),無視野缺損,全程自費,非以全民健康保險身分住院",
+      "issue_date": "2026-05-21",
+      "hospital_name": "平安紀念醫院"
+    },
+    "medical_receipt": {
+      "hospital_name": "平安紀念醫院",
+      "patient_name": "邱雅玲",
+      "receipt_date": "2026-05-21",
+      "items": [
+        {
+          "item_name": "病房費",
+          "amount": "6000"
+        },
+        {
+          "item_name": "手術費",
+          "amount": "36000"
+        },
+        {
+          "item_name": "麻醉費",
+          "amount": "5000"
+        },
+        {
+          "item_name": "藥費",
+          "amount": "1200"
+        }
+      ],
+      "total_amount": "48200",
+      "is_copy": false
+    },
+    "claim_application": {
+      "applicant_name": "邱雅玲",
+      "policy_number": "POL-C-2026-01",
+      "policy_effective_date": "2025-01-15",
+      "claim_type": "實支實付住院醫療",
+      "application_date": "2026-05-27",
+      "claimed_amount": "48200",
+      "other_insurer_paid": {
+        "room_fee": "0",
+        "surgery_fee": "0",
+        "misc_fee": "0",
+        "ambulance_fee": "0",
+        "unallocated": "0"
+      }
+    },
+    "incident_statement": null
+  }
+}

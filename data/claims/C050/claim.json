@@ -1,0 +1,67 @@
+{
+  "claim_id": "C050",
+  "scenario": "除外責任件:無照駕駛(POL-A 第16條)",
+  "synthetic": true,
+  "documents": {
+    "diagnosis_certificate": {
+      "patient_name": "余雅慧",
+      "diagnosis": "右鎖骨骨折",
+      "icd_code": "S42.001",
+      "admissions": [
+        {
+          "admission_date": "2026-06-18",
+          "discharge_date": "2026-06-21",
+          "icu_days": "0"
+        }
+      ],
+      "treatment_summary": "騎乘機車自摔致右鎖骨骨折,行骨折開放復位內固定術",
+      "issue_date": "2026-06-21",
+      "hospital_name": "康寧聯合醫院"
+    },
+    "medical_receipt": {
+      "hospital_name": "康寧聯合醫院",
+      "patient_name": "余雅慧",
+      "receipt_date": "2026-06-21",
+      "items": [
+        {
+          "item_name": "病房費",
+          "amount": "6000"
+        },
+        {
+          "item_name": "手術費",
+          "amount": "30000"
+        },
+        {
+          "item_name": "麻醉費",
+          "amount": "5000"
+        },
+        {
+          "item_name": "藥費",
+          "amount": "2200"
+        }
+      ],
+      "total_amount": "43200",
+      "is_copy": false
+    },
+    "claim_application": {
+      "applicant_name": "余雅慧",
+      "policy_number": "POL-A-2026-01",
+      "policy_effective_date": "2025-04-01",
+      "claim_type": "住院醫療",
+      "application_date": "2026-06-27",
+      "claimed_amount": "37000",
+      "other_insurer_paid": {
+        "room_fee": "0",
+        "surgery_fee": "0",
+        "misc_fee": "0",
+        "ambulance_fee": "0",
+        "unallocated": "0"
+      }
+    },
+    "incident_statement": {
+      "source": "police_record",
+      "incident_date": "2026-06-18",
+      "statement_text": "2026-06-18 當事人騎乘普通重型機車自行摔倒受傷,經警方到場查證,當事人未領有任何駕駛執照,依法舉發無照駕駛;當事人送醫治療。"
+    }
+  }
+}

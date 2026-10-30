@@ -1,0 +1,11 @@
+{
+  "claim_id": "C039",
+  "scenario": "除外責任件:POL-A",
+  "synthetic": true,
+  "decision": "deny",
+  "approved_amount": "0",
+  "derivation": "牙科處置屬除外(第20條),非因意外傷害所致,不適用例外",
+  "clause_basis": [
+    "POL-A 第20條"
+  ]
+}

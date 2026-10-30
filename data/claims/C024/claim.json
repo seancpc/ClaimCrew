@@ -1,0 +1,59 @@
+{
+  "claim_id": "C024",
+  "scenario": "既往症拒付件:POL-A",
+  "synthetic": true,
+  "documents": {
+    "diagnosis_certificate": {
+      "patient_name": "邱美玲",
+      "diagnosis": "肝硬化併腹水",
+      "icd_code": "K74.60",
+      "admissions": [
+        {
+          "admission_date": "2026-06-08",
+          "discharge_date": "2026-06-16",
+          "icu_days": "0"
+        }
+      ],
+      "treatment_summary": "病患肝硬化確診於四年前,定期本院肝膽腸胃科追蹤,本次因腹水住院",
+      "issue_date": "2026-06-16",
+      "hospital_name": "平安紀念醫院"
+    },
+    "medical_receipt": {
+      "hospital_name": "平安紀念醫院",
+      "patient_name": "邱美玲",
+      "receipt_date": "2026-06-16",
+      "items": [
+        {
+          "item_name": "病房費",
+          "amount": "15000"
+        },
+        {
+          "item_name": "藥費",
+          "amount": "9400"
+        },
+        {
+          "item_name": "檢驗費",
+          "amount": "3200"
+        }
+      ],
+      "total_amount": "27600",
+      "is_copy": false
+    },
+    "claim_application": {
+      "applicant_name": "邱美玲",
+      "policy_number": "POL-A-2026-01",
+      "policy_effective_date": "2024-11-15",
+      "claim_type": "住院醫療",
+      "application_date": "2026-06-22",
+      "claimed_amount": "27000",
+      "other_insurer_paid": {
+        "room_fee": "0",
+        "surgery_fee": "0",
+        "misc_fee": "0",
+        "ambulance_fee": "0",
+        "unallocated": "0"
+      }
+    },
+    "incident_statement": null
+  }
+}

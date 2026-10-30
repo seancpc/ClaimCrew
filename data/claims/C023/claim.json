@@ -1,0 +1,55 @@
+{
+  "claim_id": "C023",
+  "scenario": "既往症拒付件:POL-A",
+  "synthetic": true,
+  "documents": {
+    "diagnosis_certificate": {
+      "patient_name": "徐建成",
+      "diagnosis": "慢性阻塞性肺病急性惡化",
+      "icd_code": "J44.1",
+      "admissions": [
+        {
+          "admission_date": "2026-04-18",
+          "discharge_date": "2026-04-25",
+          "icu_days": "0"
+        }
+      ],
+      "treatment_summary": "病患 COPD 病史三年,長期胸腔內科門診追蹤,本次急性惡化住院",
+      "issue_date": "2026-04-25",
+      "hospital_name": "安心綜合醫院"
+    },
+    "medical_receipt": {
+      "hospital_name": "安心綜合醫院",
+      "patient_name": "徐建成",
+      "receipt_date": "2026-04-25",
+      "items": [
+        {
+          "item_name": "病房費",
+          "amount": "12000"
+        },
+        {
+          "item_name": "藥費",
+          "amount": "6800"
+        }
+      ],
+      "total_amount": "18800",
+      "is_copy": false
+    },
+    "claim_application": {
+      "applicant_name": "徐建成",
+      "policy_number": "POL-A-2026-01",
+      "policy_effective_date": "2025-08-01",
+      "claim_type": "住院醫療",
+      "application_date": "2026-05-01",
+      "claimed_amount": "24000",
+      "other_insurer_paid": {
+        "room_fee": "0",
+        "surgery_fee": "0",
+        "misc_fee": "0",
+        "ambulance_fee": "0",
+        "unallocated": "0"
+      }
+    },
+    "incident_statement": null
+  }
+}

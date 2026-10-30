@@ -1,0 +1,59 @@
+{
+  "claim_id": "C064",
+  "scenario": "未列表手術需人工件(POL-A 第10條末句;C009 舊題的 POL-A 版)",
+  "synthetic": true,
+  "documents": {
+    "diagnosis_certificate": {
+      "patient_name": "歐陽靜",
+      "diagnosis": "甲狀腺結節",
+      "icd_code": "E04.1",
+      "admissions": [
+        {
+          "admission_date": "2026-05-15",
+          "discharge_date": "2026-05-16",
+          "icu_days": "0"
+        }
+      ],
+      "treatment_summary": "行甲狀腺結節射頻消融術(經皮微創),術後翌日出院",
+      "issue_date": "2026-05-16",
+      "hospital_name": "康寧聯合醫院"
+    },
+    "medical_receipt": {
+      "hospital_name": "康寧聯合醫院",
+      "patient_name": "歐陽靜",
+      "receipt_date": "2026-05-16",
+      "items": [
+        {
+          "item_name": "病房費",
+          "amount": "3000"
+        },
+        {
+          "item_name": "手術費",
+          "amount": "45000"
+        },
+        {
+          "item_name": "麻醉費",
+          "amount": "3000"
+        }
+      ],
+      "total_amount": "51000",
+      "is_copy": false
+    },
+    "claim_application": {
+      "applicant_name": "歐陽靜",
+      "policy_number": "POL-A-2026-01",
+      "policy_effective_date": "2025-01-20",
+      "claim_type": "住院醫療",
+      "application_date": "2026-05-22",
+      "claimed_amount": "31000",
+      "other_insurer_paid": {
+        "room_fee": "0",
+        "surgery_fee": "0",
+        "misc_fee": "0",
+        "ambulance_fee": "0",
+        "unallocated": "0"
+      }
+    },
+    "incident_statement": null
+  }
+}

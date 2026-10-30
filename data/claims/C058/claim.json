@@ -1,0 +1,63 @@
+{
+  "claim_id": "C058",
+  "scenario": "等待期內發病延續件(POL-C 第24條;C049 鏡像)",
+  "synthetic": true,
+  "documents": {
+    "diagnosis_certificate": {
+      "patient_name": "翁明志",
+      "diagnosis": "第 2 型糖尿病足部感染",
+      "icd_code": "E11.621",
+      "admissions": [
+        {
+          "admission_date": "2026-07-01",
+          "discharge_date": "2026-07-06",
+          "icu_days": "0"
+        }
+      ],
+      "treatment_summary": "病患於 2026-05-10 本院新陳代謝科門診首次診斷第 2 型糖尿病,今因左足足部感染入院行清創與靜脈抗生素治療;以全民健康保險身分住院",
+      "issue_date": "2026-07-06",
+      "hospital_name": "平安紀念醫院"
+    },
+    "medical_receipt": {
+      "hospital_name": "平安紀念醫院",
+      "patient_name": "翁明志",
+      "receipt_date": "2026-07-06",
+      "items": [
+        {
+          "item_name": "病房費",
+          "amount": "15000"
+        },
+        {
+          "item_name": "藥費",
+          "amount": "9800"
+        },
+        {
+          "item_name": "檢驗費",
+          "amount": "4600"
+        },
+        {
+          "item_name": "處置費(清創)",
+          "amount": "6000"
+        }
+      ],
+      "total_amount": "35400",
+      "is_copy": false
+    },
+    "claim_application": {
+      "applicant_name": "翁明志",
+      "policy_number": "POL-C-2026-01",
+      "policy_effective_date": "2026-04-25",
+      "claim_type": "實支實付住院醫療",
+      "application_date": "2026-07-12",
+      "claimed_amount": "35400",
+      "other_insurer_paid": {
+        "room_fee": "0",
+        "surgery_fee": "0",
+        "misc_fee": "0",
+        "ambulance_fee": "0",
+        "unallocated": "0"
+      }
+    },
+    "incident_statement": null
+  }
+}

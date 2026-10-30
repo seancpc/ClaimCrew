@@ -1,0 +1,11 @@
+{
+  "claim_id": "C037",
+  "scenario": "除外責任件:POL-A",
+  "synthetic": true,
+  "decision": "deny",
+  "approved_amount": "0",
+  "derivation": "警方紀錄載明騎乘機車自摔時吐氣酒精濃度 0.42 mg/L,超過道路交通法令規定標準(0.15 mg/L),所受傷害屬第16條酒駕除外事由 → 拒付;診斷書僅載醫療事實、未提酒駕,與警方紀錄互補而非矛盾",
+  "clause_basis": [
+    "POL-A 第16條"
+  ]
+}

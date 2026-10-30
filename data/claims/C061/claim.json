@@ -1,0 +1,81 @@
+{
+  "claim_id": "C061",
+  "scenario": "金額計算件:同一保單年度累計 180 日上限(POL-A 第13條後段;三段不同疾病)",
+  "synthetic": true,
+  "documents": {
+    "diagnosis_certificate": {
+      "patient_name": "范麗雲",
+      "diagnosis": "重症肺炎併呼吸衰竭;右髖部骨折;腰椎壓迫性骨折",
+      "icd_code": "J96.00;S72.001;S32.000",
+      "admissions": [
+        {
+          "admission_date": "2025-10-15",
+          "discharge_date": "2025-12-23",
+          "icu_days": "0"
+        },
+        {
+          "admission_date": "2026-02-01",
+          "discharge_date": "2026-04-01",
+          "icu_days": "0"
+        },
+        {
+          "admission_date": "2026-06-01",
+          "discharge_date": "2026-08-04",
+          "icu_days": "0"
+        }
+      ],
+      "treatment_summary": "第 1 次:重症肺炎併呼吸衰竭,呼吸照護與長期復健;第 2 次:在家跌倒致右髖部骨折,高齡採保守治療與復健;第 3 次:再次跌倒致腰椎壓迫性骨折,保守治療與復健;三次住院均無手術",
+      "issue_date": "2026-08-04",
+      "hospital_name": "康寧聯合醫院"
+    },
+    "medical_receipt": {
+      "hospital_name": "康寧聯合醫院",
+      "patient_name": "范麗雲",
+      "receipt_date": "2026-08-04",
+      "items": [
+        {
+          "item_name": "病房費(第1次)",
+          "amount": "105000"
+        },
+        {
+          "item_name": "藥費(第1次)",
+          "amount": "42000"
+        },
+        {
+          "item_name": "病房費(第2次)",
+          "amount": "90000"
+        },
+        {
+          "item_name": "復健治療費(第2次)",
+          "amount": "36000"
+        },
+        {
+          "item_name": "病房費(第3次)",
+          "amount": "97500"
+        },
+        {
+          "item_name": "復健治療費(第3次)",
+          "amount": "39000"
+        }
+      ],
+      "total_amount": "409500",
+      "is_copy": false
+    },
+    "claim_application": {
+      "applicant_name": "范麗雲",
+      "policy_number": "POL-A-2026-01",
+      "policy_effective_date": "2025-09-01",
+      "claim_type": "住院醫療",
+      "application_date": "2026-08-10",
+      "claimed_amount": "585000",
+      "other_insurer_paid": {
+        "room_fee": "0",
+        "surgery_fee": "0",
+        "misc_fee": "0",
+        "ambulance_fee": "0",
+        "unallocated": "0"
+      }
+    },
+    "incident_statement": null
+  }
+}

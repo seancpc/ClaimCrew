@@ -1,0 +1,76 @@
+{
+  "claim_id": "C060",
+  "scenario": "反例件:出院後第 15 日再住院不視為同一次,日數各段獨立(POL-A 第12條;C008 對照)",
+  "synthetic": true,
+  "documents": {
+    "diagnosis_certificate": {
+      "patient_name": "杜嘉玲",
+      "diagnosis": "腦梗塞",
+      "icd_code": "I63.9",
+      "admissions": [
+        {
+          "admission_date": "2026-01-05",
+          "discharge_date": "2026-03-05",
+          "icu_days": "0"
+        },
+        {
+          "admission_date": "2026-03-20",
+          "discharge_date": "2026-05-03",
+          "icu_days": "0"
+        }
+      ],
+      "treatment_summary": "急性期治療後轉復健,病況穩定出院;出院後第 15 日因同疾病再入院復健",
+      "issue_date": "2026-05-03",
+      "hospital_name": "平安紀念醫院"
+    },
+    "medical_receipt": {
+      "hospital_name": "平安紀念醫院",
+      "patient_name": "杜嘉玲",
+      "receipt_date": "2026-05-03",
+      "items": [
+        {
+          "item_name": "病房費(第1次)",
+          "amount": "90000"
+        },
+        {
+          "item_name": "復健治療費(第1次)",
+          "amount": "30000"
+        },
+        {
+          "item_name": "藥費(第1次)",
+          "amount": "15000"
+        },
+        {
+          "item_name": "病房費(第2次)",
+          "amount": "67500"
+        },
+        {
+          "item_name": "復健治療費(第2次)",
+          "amount": "25000"
+        },
+        {
+          "item_name": "藥費(第2次)",
+          "amount": "10000"
+        }
+      ],
+      "total_amount": "237500",
+      "is_copy": false
+    },
+    "claim_application": {
+      "applicant_name": "杜嘉玲",
+      "policy_number": "POL-A-2026-01",
+      "policy_effective_date": "2024-09-01",
+      "claim_type": "住院醫療",
+      "application_date": "2026-05-09",
+      "claimed_amount": "315000",
+      "other_insurer_paid": {
+        "room_fee": "0",
+        "surgery_fee": "0",
+        "misc_fee": "0",
+        "ambulance_fee": "0",
+        "unallocated": "0"
+      }
+    },
+    "incident_statement": null
+  }
+}

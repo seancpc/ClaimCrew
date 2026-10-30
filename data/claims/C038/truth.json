@@ -1,0 +1,11 @@
+{
+  "claim_id": "C038",
+  "scenario": "除外責任件:POL-B",
+  "synthetic": true,
+  "decision": "deny",
+  "approved_amount": "0",
+  "derivation": "非治療必要之美容整形手術屬除外(第15條),無意外傷害例外情事",
+  "clause_basis": [
+    "POL-B 第15條"
+  ]
+}

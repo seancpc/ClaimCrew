@@ -1,0 +1,55 @@
+{
+  "claim_id": "C004",
+  "scenario": "等待期未滿件(POL-A 第22條)",
+  "synthetic": true,
+  "documents": {
+    "diagnosis_certificate": {
+      "patient_name": "張淑芬",
+      "diagnosis": "急性腸胃炎",
+      "icd_code": "K52.9",
+      "admissions": [
+        {
+          "admission_date": "2026-03-10",
+          "discharge_date": "2026-03-12",
+          "icu_days": "0"
+        }
+      ],
+      "treatment_summary": "輸液及症狀治療後出院",
+      "issue_date": "2026-03-12",
+      "hospital_name": "安心綜合醫院"
+    },
+    "medical_receipt": {
+      "hospital_name": "安心綜合醫院",
+      "patient_name": "張淑芬",
+      "receipt_date": "2026-03-12",
+      "items": [
+        {
+          "item_name": "病房費",
+          "amount": "3000"
+        },
+        {
+          "item_name": "藥費",
+          "amount": "1800"
+        }
+      ],
+      "total_amount": "4800",
+      "is_copy": false
+    },
+    "claim_application": {
+      "applicant_name": "張淑芬",
+      "policy_number": "POL-A-2026-01",
+      "policy_effective_date": "2026-02-20",
+      "claim_type": "住院醫療",
+      "application_date": "2026-03-18",
+      "claimed_amount": "9000",
+      "other_insurer_paid": {
+        "room_fee": "0",
+        "surgery_fee": "0",
+        "misc_fee": "0",
+        "ambulance_fee": "0",
+        "unallocated": "0"
+      }
+    },
+    "incident_statement": null
+  }
+}

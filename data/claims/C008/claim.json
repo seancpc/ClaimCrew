@@ -1,0 +1,64 @@
+{
+  "claim_id": "C008",
+  "scenario": "同一次住院合併+日數上限件(POL-A 第12、13條)",
+  "synthetic": true,
+  "documents": {
+    "diagnosis_certificate": {
+      "patient_name": "劉金水",
+      "diagnosis": "腦梗塞",
+      "icd_code": "I63.9",
+      "admissions": [
+        {
+          "admission_date": "2026-01-05",
+          "discharge_date": "2026-02-24",
+          "icu_days": "0"
+        },
+        {
+          "admission_date": "2026-03-06",
+          "discharge_date": "2026-04-20",
+          "icu_days": "0"
+        }
+      ],
+      "treatment_summary": "急性期治療後轉復健,2026-01-05 至 2026-02-24 住院共 51 日;出院後因同疾病於 2026-03-06 再次入院復健至 2026-04-20 共 46 日",
+      "issue_date": "2026-04-20",
+      "hospital_name": "安心綜合醫院"
+    },
+    "medical_receipt": {
+      "hospital_name": "安心綜合醫院",
+      "patient_name": "劉金水",
+      "receipt_date": "2026-04-20",
+      "items": [
+        {
+          "item_name": "病房費(兩次住院)",
+          "amount": "142500"
+        },
+        {
+          "item_name": "復健治療費",
+          "amount": "38000"
+        },
+        {
+          "item_name": "藥費",
+          "amount": "21400"
+        }
+      ],
+      "total_amount": "201900",
+      "is_copy": false
+    },
+    "claim_application": {
+      "applicant_name": "劉金水",
+      "policy_number": "POL-A-2026-01",
+      "policy_effective_date": "2025-06-01",
+      "claim_type": "住院醫療",
+      "application_date": "2026-04-28",
+      "claimed_amount": "291000",
+      "other_insurer_paid": {
+        "room_fee": "0",
+        "surgery_fee": "0",
+        "misc_fee": "0",
+        "ambulance_fee": "0",
+        "unallocated": "0"
+      }
+    },
+    "incident_statement": null
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "claim_id": "C057",
+  "scenario": "等待期未滿件:疾病住院(POL-C 第23條)",
+  "synthetic": true,
+  "decision": "deny",
+  "approved_amount": "0",
+  "derivation": "生效 2026-05-01 至住院 2026-05-25 僅 24 日,屬疾病住院,依第23條第一項 30 日等待期內不負給付責任 → 拒付;各項金額雖皆在第8、10條限額內,等待期為前置要件,不得先算金額再回頭查",
+  "clause_basis": [
+    "POL-C 第2條",
+    "POL-C 第23條"
+  ]
+}

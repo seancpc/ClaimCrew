@@ -1,0 +1,12 @@
+{
+  "claim_id": "C011",
+  "scenario": "順利件:POL-A 住院 5 日",
+  "synthetic": true,
+  "decision": "approve",
+  "approved_amount": "15000",
+  "derivation": "含入出院日 5 日;日額 2000×5 + 輔助 1000×5(第11條) = 15000",
+  "clause_basis": [
+    "POL-A 第7條",
+    "POL-A 第11條"
+  ]
+}

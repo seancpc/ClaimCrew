@@ -1,0 +1,11 @@
+{
+  "claim_id": "C020",
+  "scenario": "等待期未滿件:POL-A",
+  "synthetic": true,
+  "decision": "deny",
+  "approved_amount": "0",
+  "derivation": "生效 2026-03-25 至住院 2026-04-10 僅 16 日,未滿 30 日疾病等待期(第22條)",
+  "clause_basis": [
+    "POL-A 第22條"
+  ]
+}

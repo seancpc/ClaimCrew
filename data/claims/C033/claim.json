@@ -1,0 +1,63 @@
+{
+  "claim_id": "C033",
+  "scenario": "實支實付件:POL-C 超限截斷(住院10日)",
+  "synthetic": true,
+  "documents": {
+    "diagnosis_certificate": {
+      "patient_name": "馮偉倫",
+      "diagnosis": "股骨幹骨折",
+      "icd_code": "S72.30",
+      "admissions": [
+        {
+          "admission_date": "2026-04-15",
+          "discharge_date": "2026-04-24",
+          "icu_days": "0"
+        }
+      ],
+      "treatment_summary": "行骨折開放復位內固定術,以全民健康保險身分住院診療",
+      "issue_date": "2026-04-24",
+      "hospital_name": "平安紀念醫院"
+    },
+    "medical_receipt": {
+      "hospital_name": "平安紀念醫院",
+      "patient_name": "馮偉倫",
+      "receipt_date": "2026-04-24",
+      "items": [
+        {
+          "item_name": "病房費",
+          "amount": "35000"
+        },
+        {
+          "item_name": "手術費(含麻醉)",
+          "amount": "62000"
+        },
+        {
+          "item_name": "醫療雜費",
+          "amount": "41500"
+        },
+        {
+          "item_name": "救護車費",
+          "amount": "1800"
+        }
+      ],
+      "total_amount": "140300",
+      "is_copy": false
+    },
+    "claim_application": {
+      "applicant_name": "馮偉倫",
+      "policy_number": "POL-C-2026-01",
+      "policy_effective_date": "2024-07-20",
+      "claim_type": "實支實付住院醫療",
+      "application_date": "2026-04-30",
+      "claimed_amount": "140300",
+      "other_insurer_paid": {
+        "room_fee": "0",
+        "surgery_fee": "0",
+        "misc_fee": "0",
+        "ambulance_fee": "0",
+        "unallocated": "0"
+      }
+    },
+    "incident_statement": null
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "claim_id": "C026",
+  "scenario": "文件缺漏件:缺理賠申請書",
+  "synthetic": true,
+  "decision": "manual_review",
+  "approved_amount": "0",
+  "derivation": "缺理賠申請書,無保單號碼可資歸戶,適用保單待確認(三張保單之應備文件/補正條號各異);以三張保單共通之應備四項文件通知補件;Intake 中止不進入判定",
+  "clause_basis": []
+}

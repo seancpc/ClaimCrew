@@ -1,0 +1,13 @@
+{
+  "claim_id": "C019",
+  "scenario": "金額計算件:POL-A 含 ICU 7 日",
+  "synthetic": true,
+  "decision": "approve",
+  "approved_amount": "74000",
+  "derivation": "含入出院日 20 日;日額 2000×13 + 加護 4000×7(第8條,不重複計日額) + 輔助 1000×20(第11條) = 74000",
+  "clause_basis": [
+    "POL-A 第7條",
+    "POL-A 第8條",
+    "POL-A 第11條"
+  ]
+}

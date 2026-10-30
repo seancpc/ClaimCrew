@@ -1,0 +1,59 @@
+{
+  "claim_id": "C007",
+  "scenario": "收據與診斷不符件:收據有手術費、診斷書無手術記載(POL-B)",
+  "synthetic": true,
+  "documents": {
+    "diagnosis_certificate": {
+      "patient_name": "吳建宏",
+      "diagnosis": "上消化道出血",
+      "icd_code": "K92.2",
+      "admissions": [
+        {
+          "admission_date": "2026-04-22",
+          "discharge_date": "2026-04-26",
+          "icu_days": "0"
+        }
+      ],
+      "treatment_summary": "行胃鏡檢查確認出血點,予止血藥物治療後穩定",
+      "issue_date": "2026-04-26",
+      "hospital_name": "平安紀念醫院"
+    },
+    "medical_receipt": {
+      "hospital_name": "平安紀念醫院",
+      "patient_name": "吳建宏",
+      "receipt_date": "2026-04-26",
+      "items": [
+        {
+          "item_name": "病房費",
+          "amount": "6000"
+        },
+        {
+          "item_name": "手術費",
+          "amount": "15000"
+        },
+        {
+          "item_name": "藥費",
+          "amount": "5200"
+        }
+      ],
+      "total_amount": "26200",
+      "is_copy": false
+    },
+    "claim_application": {
+      "applicant_name": "吳建宏",
+      "policy_number": "POL-B-2026-01",
+      "policy_effective_date": "2025-03-10",
+      "claim_type": "手術醫療",
+      "application_date": "2026-05-02",
+      "claimed_amount": "19000",
+      "other_insurer_paid": {
+        "room_fee": "0",
+        "surgery_fee": "0",
+        "misc_fee": "0",
+        "ambulance_fee": "0",
+        "unallocated": "0"
+      }
+    },
+    "incident_statement": null
+  }
+}

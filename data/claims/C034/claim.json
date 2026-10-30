@@ -1,0 +1,59 @@
+{
+  "claim_id": "C034",
+  "scenario": "實支實付件:POL-C 超限截斷(住院10日)",
+  "synthetic": true,
+  "documents": {
+    "diagnosis_certificate": {
+      "patient_name": "白曉萍",
+      "diagnosis": "急性心肌炎",
+      "icd_code": "I40.9",
+      "admissions": [
+        {
+          "admission_date": "2026-05-28",
+          "discharge_date": "2026-06-06",
+          "icu_days": "0"
+        }
+      ],
+      "treatment_summary": "以全民健康保險身分住院診療",
+      "issue_date": "2026-06-06",
+      "hospital_name": "康寧聯合醫院"
+    },
+    "medical_receipt": {
+      "hospital_name": "康寧聯合醫院",
+      "patient_name": "白曉萍",
+      "receipt_date": "2026-06-06",
+      "items": [
+        {
+          "item_name": "病房費",
+          "amount": "25000"
+        },
+        {
+          "item_name": "醫療雜費",
+          "amount": "71200"
+        },
+        {
+          "item_name": "救護車費",
+          "amount": "2600"
+        }
+      ],
+      "total_amount": "98800",
+      "is_copy": false
+    },
+    "claim_application": {
+      "applicant_name": "白曉萍",
+      "policy_number": "POL-C-2026-01",
+      "policy_effective_date": "2024-07-20",
+      "claim_type": "實支實付住院醫療",
+      "application_date": "2026-06-12",
+      "claimed_amount": "98800",
+      "other_insurer_paid": {
+        "room_fee": "0",
+        "surgery_fee": "0",
+        "misc_fee": "0",
+        "ambulance_fee": "0",
+        "unallocated": "0"
+      }
+    },
+    "incident_statement": null
+  }
+}

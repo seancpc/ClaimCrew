@@ -1,0 +1,63 @@
+{
+  "claim_id": "C046",
+  "scenario": "除外責任件:牙科手術(POL-B 第18條)",
+  "synthetic": true,
+  "documents": {
+    "diagnosis_certificate": {
+      "patient_name": "曾建中",
+      "diagnosis": "下顎阻生智齒(雙側)",
+      "icd_code": "K01.1",
+      "admissions": [
+        {
+          "admission_date": "2026-05-08",
+          "discharge_date": "2026-05-09",
+          "icu_days": "0"
+        }
+      ],
+      "treatment_summary": "全身麻醉下行雙側下顎阻生齒拔除術,非外傷所致",
+      "issue_date": "2026-05-09",
+      "hospital_name": "平安紀念醫院"
+    },
+    "medical_receipt": {
+      "hospital_name": "平安紀念醫院",
+      "patient_name": "曾建中",
+      "receipt_date": "2026-05-09",
+      "items": [
+        {
+          "item_name": "病房費",
+          "amount": "4000"
+        },
+        {
+          "item_name": "手術費",
+          "amount": "22000"
+        },
+        {
+          "item_name": "麻醉費",
+          "amount": "8000"
+        },
+        {
+          "item_name": "藥費",
+          "amount": "1500"
+        }
+      ],
+      "total_amount": "35500",
+      "is_copy": false
+    },
+    "claim_application": {
+      "applicant_name": "曾建中",
+      "policy_number": "POL-B-2026-01",
+      "policy_effective_date": "2025-02-10",
+      "claim_type": "手術醫療",
+      "application_date": "2026-05-15",
+      "claimed_amount": "17000",
+      "other_insurer_paid": {
+        "room_fee": "0",
+        "surgery_fee": "0",
+        "misc_fee": "0",
+        "ambulance_fee": "0",
+        "unallocated": "0"
+      }
+    },
+    "incident_statement": null
+  }
+}

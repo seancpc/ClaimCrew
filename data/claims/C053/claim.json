@@ -1,0 +1,63 @@
+{
+  "claim_id": "C053",
+  "scenario": "除外但書件:牙科處置之意外例外(POL-A 第20條但書,approve)",
+  "synthetic": true,
+  "documents": {
+    "diagnosis_certificate": {
+      "patient_name": "龔文彬",
+      "diagnosis": "下顎骨骨折",
+      "icd_code": "S02.609",
+      "admissions": [
+        {
+          "admission_date": "2026-06-10",
+          "discharge_date": "2026-06-12",
+          "icu_days": "0"
+        }
+      ],
+      "treatment_summary": "2026-06-10 遭遇車禍致下顎骨骨折(持有效駕照、無飲酒),行骨折開放復位內固定術,合併拔除二顆斷裂牙齒",
+      "issue_date": "2026-06-12",
+      "hospital_name": "康寧聯合醫院"
+    },
+    "medical_receipt": {
+      "hospital_name": "康寧聯合醫院",
+      "patient_name": "龔文彬",
+      "receipt_date": "2026-06-12",
+      "items": [
+        {
+          "item_name": "病房費",
+          "amount": "4500"
+        },
+        {
+          "item_name": "手術費",
+          "amount": "35000"
+        },
+        {
+          "item_name": "麻醉費",
+          "amount": "6000"
+        },
+        {
+          "item_name": "藥費",
+          "amount": "2300"
+        }
+      ],
+      "total_amount": "47800",
+      "is_copy": false
+    },
+    "claim_application": {
+      "applicant_name": "龔文彬",
+      "policy_number": "POL-A-2026-01",
+      "policy_effective_date": "2025-03-01",
+      "claim_type": "住院醫療",
+      "application_date": "2026-06-18",
+      "claimed_amount": "34000",
+      "other_insurer_paid": {
+        "room_fee": "0",
+        "surgery_fee": "0",
+        "misc_fee": "0",
+        "ambulance_fee": "0",
+        "unallocated": "0"
+      }
+    },
+    "incident_statement": null
+  }
+}

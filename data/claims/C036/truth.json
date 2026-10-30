@@ -1,0 +1,12 @@
+{
+  "claim_id": "C036",
+  "scenario": "雜費負面項目件:POL-C(證明書費/掛號費/看護費不計)",
+  "synthetic": true,
+  "decision": "approve",
+  "approved_amount": "29700",
+  "derivation": "病房費 min(11000, 3000×5)=11000(第8條);雜費 min(18700, 60000)=18700(第10條);合計 29700;診斷證明書費 400、掛號費 150、看護費 8000 屬第10條負面列舉不計入",
+  "clause_basis": [
+    "POL-C 第8條",
+    "POL-C 第10條"
+  ]
+}

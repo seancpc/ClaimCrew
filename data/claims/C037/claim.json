@@ -1,0 +1,59 @@
+{
+  "claim_id": "C037",
+  "scenario": "除外責任件:POL-A",
+  "synthetic": true,
+  "documents": {
+    "diagnosis_certificate": {
+      "patient_name": "袁淑貞",
+      "diagnosis": "頭部外傷併腦震盪",
+      "icd_code": "S06.0X0",
+      "admissions": [
+        {
+          "admission_date": "2026-05-30",
+          "discharge_date": "2026-06-03",
+          "icu_days": "0"
+        }
+      ],
+      "treatment_summary": "騎乘機車自摔送醫,頭部外傷併腦震盪,住院觀察治療",
+      "issue_date": "2026-06-03",
+      "hospital_name": "康寧聯合醫院"
+    },
+    "medical_receipt": {
+      "hospital_name": "康寧聯合醫院",
+      "patient_name": "袁淑貞",
+      "receipt_date": "2026-06-03",
+      "items": [
+        {
+          "item_name": "病房費",
+          "amount": "6000"
+        },
+        {
+          "item_name": "手術費",
+          "amount": "22000"
+        }
+      ],
+      "total_amount": "28000",
+      "is_copy": false
+    },
+    "claim_application": {
+      "applicant_name": "袁淑貞",
+      "policy_number": "POL-A-2026-01",
+      "policy_effective_date": "2024-08-15",
+      "claim_type": "住院醫療",
+      "application_date": "2026-06-09",
+      "claimed_amount": "28000",
+      "other_insurer_paid": {
+        "room_fee": "0",
+        "surgery_fee": "0",
+        "misc_fee": "0",
+        "ambulance_fee": "0",
+        "unallocated": "0"
+      }
+    },
+    "incident_statement": {
+      "source": "police_record",
+      "incident_date": "2026-05-30",
+      "statement_text": "2026-05-30 當事人騎乘普通重型機車行經市區道路自行摔倒,經警方到場實施吐氣酒精濃度測試為 0.42 mg/L,超過道路交通安全規則規定標準(0.15 mg/L),依法舉發;當事人送醫治療。"
+    }
+  }
+}

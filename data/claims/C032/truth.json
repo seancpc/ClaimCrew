@@ -1,0 +1,12 @@
+{
+  "claim_id": "C032",
+  "scenario": "實支實付件:POL-C 限額內(住院8日)",
+  "synthetic": true,
+  "decision": "approve",
+  "approved_amount": "53400",
+  "derivation": "病房費 min(22400, 3000×8)=22400(第8條);雜費 min(31000, 60000)=31000(第10條);合計 53400",
+  "clause_basis": [
+    "POL-C 第8條",
+    "POL-C 第10條"
+  ]
+}

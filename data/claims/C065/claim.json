@@ -1,0 +1,55 @@
+{
+  "claim_id": "C065",
+  "scenario": "定義層級件:診所施行之門診手術(POL-B 第2條第二、五款,approve)",
+  "synthetic": true,
+  "documents": {
+    "diagnosis_certificate": {
+      "patient_name": "戴俊宏",
+      "diagnosis": "背部脂肪瘤",
+      "icd_code": "D17.1",
+      "admissions": [
+        {
+          "admission_date": "2026-04-08",
+          "discharge_date": "2026-04-08",
+          "icu_days": "0"
+        }
+      ],
+      "treatment_summary": "背部脂肪瘤近期增大伴疼痛與壓迫不適,於本診所門診局部麻醉下行脂肪瘤切除術,未住院",
+      "issue_date": "2026-04-08",
+      "hospital_name": "仁心皮膚科診所"
+    },
+    "medical_receipt": {
+      "hospital_name": "仁心皮膚科診所",
+      "patient_name": "戴俊宏",
+      "receipt_date": "2026-04-08",
+      "items": [
+        {
+          "item_name": "手術費",
+          "amount": "6000"
+        },
+        {
+          "item_name": "藥費",
+          "amount": "500"
+        }
+      ],
+      "total_amount": "6500",
+      "is_copy": false
+    },
+    "claim_application": {
+      "applicant_name": "戴俊宏",
+      "policy_number": "POL-B-2026-01",
+      "policy_effective_date": "2025-06-01",
+      "claim_type": "手術醫療",
+      "application_date": "2026-04-14",
+      "claimed_amount": "2500",
+      "other_insurer_paid": {
+        "room_fee": "0",
+        "surgery_fee": "0",
+        "misc_fee": "0",
+        "ambulance_fee": "0",
+        "unallocated": "0"
+      }
+    },
+    "incident_statement": null
+  }
+}

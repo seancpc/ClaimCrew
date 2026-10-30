@@ -1,0 +1,59 @@
+{
+  "claim_id": "C035",
+  "scenario": "實支實付件:POL-C 非健保65%(住院11日)",
+  "synthetic": true,
+  "documents": {
+    "diagnosis_certificate": {
+      "patient_name": "康承翰",
+      "diagnosis": "退化性髖關節炎",
+      "icd_code": "M16.1",
+      "admissions": [
+        {
+          "admission_date": "2026-06-15",
+          "discharge_date": "2026-06-25",
+          "icu_days": "0"
+        }
+      ],
+      "treatment_summary": "行全髖關節置換術,自費身分入住非健保特約醫院",
+      "issue_date": "2026-06-25",
+      "hospital_name": "安心綜合醫院"
+    },
+    "medical_receipt": {
+      "hospital_name": "安心綜合醫院",
+      "patient_name": "康承翰",
+      "receipt_date": "2026-06-25",
+      "items": [
+        {
+          "item_name": "病房費",
+          "amount": "46200"
+        },
+        {
+          "item_name": "手術費(含麻醉)",
+          "amount": "95000"
+        },
+        {
+          "item_name": "醫療雜費",
+          "amount": "52000"
+        }
+      ],
+      "total_amount": "193200",
+      "is_copy": false
+    },
+    "claim_application": {
+      "applicant_name": "康承翰",
+      "policy_number": "POL-C-2026-01",
+      "policy_effective_date": "2024-07-20",
+      "claim_type": "實支實付住院醫療",
+      "application_date": "2026-07-01",
+      "claimed_amount": "193200",
+      "other_insurer_paid": {
+        "room_fee": "0",
+        "surgery_fee": "0",
+        "misc_fee": "0",
+        "ambulance_fee": "0",
+        "unallocated": "0"
+      }
+    },
+    "incident_statement": null
+  }
+}

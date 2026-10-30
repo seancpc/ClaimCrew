@@ -1,0 +1,13 @@
+{
+  "claim_id": "C030",
+  "scenario": "順利件:POL-B 住院手術第5級(住院37日,慰問上限30日)",
+  "synthetic": true,
+  "decision": "approve",
+  "approved_amount": "130000",
+  "derivation": "住院手術「冠狀動脈繞道手術」(附錄一第5級)100000(第7條) + 慰問 1000×30(第12條) = 130000",
+  "clause_basis": [
+    "POL-B 第7條",
+    "POL-B 第12條",
+    "POL-B 附錄一"
+  ]
+}

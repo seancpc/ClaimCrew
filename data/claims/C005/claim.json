@@ -1,0 +1,59 @@
+{
+  "claim_id": "C005",
+  "scenario": "既往症拒付件(POL-A 第18條)",
+  "synthetic": true,
+  "documents": {
+    "diagnosis_certificate": {
+      "patient_name": "李文雄",
+      "diagnosis": "第二型糖尿病併發糖尿病足感染",
+      "icd_code": "E11.621",
+      "admissions": [
+        {
+          "admission_date": "2026-06-01",
+          "discharge_date": "2026-06-10",
+          "icu_days": "0"
+        }
+      ],
+      "treatment_summary": "清創及抗生素治療。病患有糖尿病病史五年,長期於本院新陳代謝科門診追蹤",
+      "issue_date": "2026-06-10",
+      "hospital_name": "平安紀念醫院"
+    },
+    "medical_receipt": {
+      "hospital_name": "平安紀念醫院",
+      "patient_name": "李文雄",
+      "receipt_date": "2026-06-10",
+      "items": [
+        {
+          "item_name": "病房費",
+          "amount": "13500"
+        },
+        {
+          "item_name": "手術費",
+          "amount": "12000"
+        },
+        {
+          "item_name": "藥費",
+          "amount": "8600"
+        }
+      ],
+      "total_amount": "34100",
+      "is_copy": false
+    },
+    "claim_application": {
+      "applicant_name": "李文雄",
+      "policy_number": "POL-A-2026-01",
+      "policy_effective_date": "2025-09-01",
+      "claim_type": "住院醫療",
+      "application_date": "2026-06-15",
+      "claimed_amount": "37000",
+      "other_insurer_paid": {
+        "room_fee": "0",
+        "surgery_fee": "0",
+        "misc_fee": "0",
+        "ambulance_fee": "0",
+        "unallocated": "0"
+      }
+    },
+    "incident_statement": null
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "claim_id": "C028",
+  "scenario": "順利件:POL-B 門診手術第1級",
+  "synthetic": true,
+  "documents": {
+    "diagnosis_certificate": {
+      "patient_name": "呂秀蘭",
+      "diagnosis": "體表脂肪瘤",
+      "icd_code": "D17.9",
+      "admissions": [
+        {
+          "admission_date": "2026-06-03",
+          "discharge_date": "2026-06-03",
+          "icu_days": "0"
+        }
+      ],
+      "treatment_summary": "行脂肪瘤切除術(門診)",
+      "issue_date": "2026-06-03",
+      "hospital_name": "康寧聯合醫院"
+    },
+    "medical_receipt": {
+      "hospital_name": "康寧聯合醫院",
+      "patient_name": "呂秀蘭",
+      "receipt_date": "2026-06-03",
+      "items": [
+        {
+          "item_name": "手術費",
+          "amount": "20000"
+        },
+        {
+          "item_name": "麻醉費",
+          "amount": "2000"
+        }
+      ],
+      "total_amount": "22000",
+      "is_copy": false
+    },
+    "claim_application": {
+      "applicant_name": "呂秀蘭",
+      "policy_number": "POL-B-2026-01",
+      "policy_effective_date": "2025-01-15",
+      "claim_type": "手術醫療",
+      "application_date": "2026-06-09",
+      "claimed_amount": "2500",
+      "other_insurer_paid": {
+        "room_fee": "0",
+        "surgery_fee": "0",
+        "misc_fee": "0",
+        "ambulance_fee": "0",
+        "unallocated": "0"
+      }
+    },
+    "incident_statement": null
+  }
+}

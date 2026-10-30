@@ -1,0 +1,76 @@
+{
+  "claim_id": "C066",
+  "scenario": "邊界件:出院後恰第 14 日再住院視為同一次(POL-C 第13條;C055/C059 之間)",
+  "synthetic": true,
+  "documents": {
+    "diagnosis_certificate": {
+      "patient_name": "莊雅芳",
+      "diagnosis": "急性膽管炎(復發)",
+      "icd_code": "K83.0",
+      "admissions": [
+        {
+          "admission_date": "2026-08-01",
+          "discharge_date": "2026-08-05",
+          "icu_days": "0"
+        },
+        {
+          "admission_date": "2026-08-19",
+          "discharge_date": "2026-08-21",
+          "icu_days": "0"
+        }
+      ],
+      "treatment_summary": "第 1 次住院靜脈抗生素(含自費抗生素)治療後出院;出院後同疾病復發再入院續以抗生素治療;以全民健康保險身分住院",
+      "issue_date": "2026-08-21",
+      "hospital_name": "安心綜合醫院"
+    },
+    "medical_receipt": {
+      "hospital_name": "安心綜合醫院",
+      "patient_name": "莊雅芳",
+      "receipt_date": "2026-08-21",
+      "items": [
+        {
+          "item_name": "病房費(第1次)",
+          "amount": "12000"
+        },
+        {
+          "item_name": "藥費(第1次)",
+          "amount": "28000"
+        },
+        {
+          "item_name": "檢驗費(第1次)",
+          "amount": "12000"
+        },
+        {
+          "item_name": "病房費(第2次)",
+          "amount": "7500"
+        },
+        {
+          "item_name": "藥費(第2次)",
+          "amount": "20000"
+        },
+        {
+          "item_name": "檢驗費(第2次)",
+          "amount": "10000"
+        }
+      ],
+      "total_amount": "89500",
+      "is_copy": false
+    },
+    "claim_application": {
+      "applicant_name": "莊雅芳",
+      "policy_number": "POL-C-2026-01",
+      "policy_effective_date": "2025-01-10",
+      "claim_type": "實支實付住院醫療",
+      "application_date": "2026-08-27",
+      "claimed_amount": "89500",
+      "other_insurer_paid": {
+        "room_fee": "0",
+        "surgery_fee": "0",
+        "misc_fee": "0",
+        "ambulance_fee": "0",
+        "unallocated": "0"
+      }
+    },
+    "incident_statement": null
+  }
+}

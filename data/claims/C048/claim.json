@@ -1,0 +1,67 @@
+{
+  "claim_id": "C048",
+  "scenario": "等待期例外件:傷害不受疾病等待期限制(POL-B 第20條第二項,approve)",
+  "synthetic": true,
+  "documents": {
+    "diagnosis_certificate": {
+      "patient_name": "沈冠霖",
+      "diagnosis": "左橈骨遠端骨折",
+      "icd_code": "S52.501",
+      "admissions": [
+        {
+          "admission_date": "2026-05-12",
+          "discharge_date": "2026-05-15",
+          "icu_days": "0"
+        }
+      ],
+      "treatment_summary": "2026-05-12 騎乘自行車跌倒致傷(無飲酒),行骨折開放復位內固定術",
+      "issue_date": "2026-05-15",
+      "hospital_name": "安心綜合醫院"
+    },
+    "medical_receipt": {
+      "hospital_name": "安心綜合醫院",
+      "patient_name": "沈冠霖",
+      "receipt_date": "2026-05-15",
+      "items": [
+        {
+          "item_name": "病房費",
+          "amount": "8000"
+        },
+        {
+          "item_name": "手術費",
+          "amount": "32000"
+        },
+        {
+          "item_name": "麻醉費",
+          "amount": "6000"
+        },
+        {
+          "item_name": "藥費",
+          "amount": "2600"
+        },
+        {
+          "item_name": "醫材費",
+          "amount": "15000"
+        }
+      ],
+      "total_amount": "63600",
+      "is_copy": false
+    },
+    "claim_application": {
+      "applicant_name": "沈冠霖",
+      "policy_number": "POL-B-2026-01",
+      "policy_effective_date": "2026-05-01",
+      "claim_type": "手術醫療",
+      "application_date": "2026-05-21",
+      "claimed_amount": "34000",
+      "other_insurer_paid": {
+        "room_fee": "0",
+        "surgery_fee": "0",
+        "misc_fee": "0",
+        "ambulance_fee": "0",
+        "unallocated": "0"
+      }
+    },
+    "incident_statement": null
+  }
+}

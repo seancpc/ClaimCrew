@@ -1,0 +1,9 @@
+pydantic==2.9.2
+reportlab==4.2.5
+pdfplumber==0.11.10
+pypdfium2==5.13.0  # SPEC-ak:PDF 轉影像(pdfplumber 間接依賴,改為直接釘選)
+pillow==13.0.0  # SPEC-ak:影像劣化(pdfplumber / reportlab 間接依賴,改為直接釘選)
+openai==3.22.1
+azure-ai-projects==2.7.0  # SPEC-n:Foundry Agents v2(create_version + Responses agent_reference);相依 openai>=3.0.0
+azure-identity==1.26.0  # SPEC-n:Agent Service 僅支援 Entra 驗證(DefaultAzureCredential / az login)
+azure-storage-blob==12.31.0  # SPEC-t:雲端 Job 的輸出與 DI 快取走 Blob(託管身分);桌機 sync_cache 亦用

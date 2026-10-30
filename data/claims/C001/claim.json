@@ -1,0 +1,59 @@
+{
+  "claim_id": "C001",
+  "scenario": "順利件:單純疾病住院(POL-A)",
+  "synthetic": true,
+  "documents": {
+    "diagnosis_certificate": {
+      "patient_name": "王大明",
+      "diagnosis": "肺炎",
+      "icd_code": "J18.9",
+      "admissions": [
+        {
+          "admission_date": "2026-03-02",
+          "discharge_date": "2026-03-07",
+          "icu_days": "0"
+        }
+      ],
+      "treatment_summary": "抗生素治療,住院五日,病況穩定後出院",
+      "issue_date": "2026-03-07",
+      "hospital_name": "安心綜合醫院"
+    },
+    "medical_receipt": {
+      "hospital_name": "安心綜合醫院",
+      "patient_name": "王大明",
+      "receipt_date": "2026-03-07",
+      "items": [
+        {
+          "item_name": "病房費",
+          "amount": "7500"
+        },
+        {
+          "item_name": "藥費",
+          "amount": "3200"
+        },
+        {
+          "item_name": "檢驗費",
+          "amount": "2800"
+        }
+      ],
+      "total_amount": "13500",
+      "is_copy": false
+    },
+    "claim_application": {
+      "applicant_name": "王大明",
+      "policy_number": "POL-A-2026-01",
+      "policy_effective_date": "2025-01-10",
+      "claim_type": "住院醫療",
+      "application_date": "2026-03-15",
+      "claimed_amount": "18000",
+      "other_insurer_paid": {
+        "room_fee": "0",
+        "surgery_fee": "0",
+        "misc_fee": "0",
+        "ambulance_fee": "0",
+        "unallocated": "0"
+      }
+    },
+    "incident_statement": null
+  }
+}

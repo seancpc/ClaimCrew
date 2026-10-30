@@ -1,0 +1,71 @@
+{
+  "claim_id": "C003",
+  "scenario": "順利件:實支實付逐項限額(POL-C)",
+  "synthetic": true,
+  "documents": {
+    "diagnosis_certificate": {
+      "patient_name": "陳志強",
+      "diagnosis": "急性闌尾炎",
+      "icd_code": "K35.8",
+      "admissions": [
+        {
+          "admission_date": "2026-05-03",
+          "discharge_date": "2026-05-06",
+          "icu_days": "0"
+        }
+      ],
+      "treatment_summary": "行腹腔鏡闌尾切除術,以全民健康保險身分住院",
+      "issue_date": "2026-05-06",
+      "hospital_name": "平安紀念醫院"
+    },
+    "medical_receipt": {
+      "hospital_name": "平安紀念醫院",
+      "patient_name": "陳志強",
+      "receipt_date": "2026-05-06",
+      "items": [
+        {
+          "item_name": "病房費",
+          "amount": "7500"
+        },
+        {
+          "item_name": "手術費",
+          "amount": "18000"
+        },
+        {
+          "item_name": "麻醉費",
+          "amount": "4000"
+        },
+        {
+          "item_name": "藥費",
+          "amount": "9800"
+        },
+        {
+          "item_name": "醫材費",
+          "amount": "6200"
+        },
+        {
+          "item_name": "檢驗費",
+          "amount": "2420"
+        }
+      ],
+      "total_amount": "47920",
+      "is_copy": false
+    },
+    "claim_application": {
+      "applicant_name": "陳志強",
+      "policy_number": "POL-C-2026-01",
+      "policy_effective_date": "2025-02-15",
+      "claim_type": "實支實付住院醫療",
+      "application_date": "2026-05-12",
+      "claimed_amount": "45920",
+      "other_insurer_paid": {
+        "room_fee": "0",
+        "surgery_fee": "0",
+        "misc_fee": "0",
+        "ambulance_fee": "0",
+        "unallocated": "0"
+      }
+    },
+    "incident_statement": null
+  }
+}

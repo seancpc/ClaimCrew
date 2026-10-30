@@ -1,0 +1,59 @@
+{
+  "claim_id": "C045",
+  "scenario": "除外但書件:妊娠併發症子癲前症(POL-A 第19條但書,approve)",
+  "synthetic": true,
+  "documents": {
+    "diagnosis_certificate": {
+      "patient_name": "簡怡君",
+      "diagnosis": "子癲前症",
+      "icd_code": "O14.90",
+      "admissions": [
+        {
+          "admission_date": "2026-04-06",
+          "discharge_date": "2026-04-10",
+          "icu_days": "0"
+        }
+      ],
+      "treatment_summary": "妊娠 32 週,血壓 165/105 mmHg 併蛋白尿,住院降壓與胎兒監測,未生產,病況穩定後出院",
+      "issue_date": "2026-04-10",
+      "hospital_name": "安心綜合醫院"
+    },
+    "medical_receipt": {
+      "hospital_name": "安心綜合醫院",
+      "patient_name": "簡怡君",
+      "receipt_date": "2026-04-10",
+      "items": [
+        {
+          "item_name": "病房費",
+          "amount": "7500"
+        },
+        {
+          "item_name": "藥費",
+          "amount": "3800"
+        },
+        {
+          "item_name": "檢驗費",
+          "amount": "4200"
+        }
+      ],
+      "total_amount": "15500",
+      "is_copy": false
+    },
+    "claim_application": {
+      "applicant_name": "簡怡君",
+      "policy_number": "POL-A-2026-01",
+      "policy_effective_date": "2025-05-01",
+      "claim_type": "住院醫療",
+      "application_date": "2026-04-16",
+      "claimed_amount": "15000",
+      "other_insurer_paid": {
+        "room_fee": "0",
+        "surgery_fee": "0",
+        "misc_fee": "0",
+        "ambulance_fee": "0",
+        "unallocated": "0"
+      }
+    },
+    "incident_statement": null
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "claim_id": "C027",
+  "scenario": "順利件:POL-B 門診手術第2級",
+  "synthetic": true,
+  "decision": "approve",
+  "approved_amount": "7500",
+  "derivation": "門診手術「白內障晶體置換術」(附錄一第2級)15000×50%(第8條) = 7500",
+  "clause_basis": [
+    "POL-B 第8條",
+    "POL-B 附錄一"
+  ]
+}

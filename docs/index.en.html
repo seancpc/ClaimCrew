@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ClaimCrew — Medical Insurance Claims Review Pipeline on Azure</title>
+<style>
+  :root {
+    --bg: #1e1e1e;
+    --text: #e0e0e0;
+    --heading: #00bcd4;
+    --link: #58a6ff;
+    --code-bg: #2a2a2a;
+    --border: #333;
+    --muted: #9aa0a6;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    font-size: 16px;
+  }
+  .container { max-width: 800px; margin: 0 auto; padding: 2rem; }
+  h1 { color: var(--heading); font-weight: bold; font-size: 2rem; margin: 0 0 0.3rem; }
+  .subtitle { color: var(--text); font-size: 1.1rem; margin: 0; }
+  .badges { color: var(--muted); font-size: 0.8rem; margin: 0.6rem 0 0; font-family: Consolas, monospace; }
+  .lang { text-align: right; font-size: 0.9rem; margin: 0 0 1.2rem; }
+  .banner {
+    background: #232323; border: 1px solid var(--border); border-radius: 6px;
+    padding: 0.7rem 1rem; margin: 0.9rem 0 0; font-size: 0.9rem;
+  }
+  .banner strong { color: var(--heading); }
+  .lead {
+    background: #232323; border-left: 4px solid var(--heading);
+    border-radius: 0 6px 6px 0; padding: 1rem 1.1rem; margin: 1.6rem 0;
+  }
+  h2 { color: var(--heading); font-weight: bold; font-size: 1.5rem; margin: 2.5rem 0 0.8rem; }
+  h3 { color: #ffffff; font-weight: bold; font-size: 1.12rem; margin: 1.9rem 0 0.4rem; }
+  a { color: var(--link); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  strong { color: #ffffff; }
+  ul { padding-left: 1.4rem; margin: 0.7rem 0; }
+  li { margin: 0.4rem 0; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.95rem; }
+  th, td { border: 1px solid var(--border); padding: 0.5rem 0.8rem; text-align: left; vertical-align: top; }
+  th { background: var(--code-bg); white-space: nowrap; }
+  pre {
+    background: var(--code-bg); padding: 1rem; border-radius: 6px;
+    overflow-x: auto; font-size: 0.78rem; line-height: 1.45;
+    font-family: Consolas, monospace; color: var(--text);
+  }
+  code { background: var(--code-bg); padding: 1px 5px; border-radius: 3px; font-size: 90%; }
+  .btns { display: flex; gap: 0.8rem; flex-wrap: wrap; margin: 1.1rem 0; }
+  .btn {
+    display: inline-block; padding: 0.6rem 1.1rem;
+    border: 1px solid var(--link); border-radius: 6px;
+    color: var(--link); font-size: 0.95rem; font-weight: 500;
+  }
+  .btn:hover { background: var(--link); color: var(--bg); text-decoration: none; }
+  .btn.primary { background: var(--heading); border-color: var(--heading); color: var(--bg); }
+  .btn.primary:hover { opacity: 0.85; color: var(--bg); }
+  .note {
+    background: #2a2620; border-left: 4px solid #d4a017;
+    border-radius: 0 6px 6px 0; padding: 0.8rem 1rem; margin: 1rem 0; font-size: 0.95rem;
+  }
+  .placeholder {
+    background: var(--code-bg); border: 1px dashed #555; border-radius: 6px;
+    padding: 2.5rem 1.5rem; text-align: center; color: var(--muted); margin: 1rem 0;
+  }
+  img.shot { max-width: 760px; width: 100%; border: 1px solid var(--border); border-radius: 6px; }
+  .caption { font-size: 0.85rem; color: var(--muted); }
+  footer {
+    margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--border);
+    color: var(--muted); font-size: 0.95rem;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <p class="lang">English ｜ <a href="index.html">繁體中文</a></p>
+
+  <h1>Medical Insurance Claims Review on Azure (ClaimCrew)</h1>
+  <p class="subtitle">Medical Insurance Claims Adjudication on Azure Managed Services</p>
+  <div class="banner">Fully managed Azure stack, zero self-hosting · <strong>The LLM judges facts; code decides release</strong> · 0 release errors in a 73-case full regression · NT$2,189 total cloud spend during development, $0/day after teardown · fully synthetic data, zero PHI</div>
+
+  <div class="btns">
+    <a class="btn primary" href="https://youtu.be/emzxXhkF_Tk">▶ Demo video</a>
+    <a class="btn" href="https://github.com/seancpc/ClaimCrew">Source code (GitHub)</a>
+    <a class="btn" href="https://github.com/seancpc/ClaimCrew/tree/main/docs/adr">Architecture Decision Records</a>
+  </div>
+
+  <p class="lead">
+    When an insurer receives a claim (diagnosis certificate + medical receipt + application form), the system
+    extracts the documents, matches policy clauses with verbatim citations, adjudicates, and routes cases to human review.
+    The core design is that <strong>the model only reads facts and code decides release</strong>: payout amounts are summed from
+    calculation lines and cross-checked against the policy by code, and failing any of 47 deterministic checks sends the case to a human.
+    Cost is a first-class engineering goal too: everything that did not need the cloud was finished at $0, and everything is torn down with Bicep afterwards.
+  </p>
+
+  <h2>Design Concept</h2>
+  <ul>
+    <li><strong>Compress the metered window</strong>: synthetic data, schema, Gate, eval, prompts and Bicep were all finished <strong>before any Azure resource existed</strong>. The billing clock starts last, and the paid window holds only cloud-only work.</li>
+    <li><strong>The LLM judges facts; code decides release</strong>: the model fills in the decision and the calculation material and points to clause segments; code sums the amounts and fills in the verbatim quotes, then the Gate re-checks clauses, caps, day counts, waiting periods and confidence thresholds. Any failure routes the case to a human.</li>
+    <li><strong>Teardown as cost control</strong>: everything is torn down when done ($0 standing cost); the repo keeps <strong>the ingredients and scripts that regenerate everything</strong>, not the artifacts. A demo environment is rebuilt with Bicep and the rebuild runbook.</li>
+  </ul>
+
+  <h2>Overview</h2>
+  <ul>
+    <li><strong>Task</strong>: three-way claim classification (approve / deny / manual review) plus payout calculation, every decision bound clause by clause to citations.</li>
+    <li><strong>Scale</strong>: 3 fictional policies (per-diem hospitalization / surgical / reimbursement, 100 clauses), 73 synthetic claims (41 approve / 23 deny / 9 manual) including deliberate traps (waiting periods, pre-existing conditions, exclusions, cap truncation, contradicting documents); ground truth hand-checked case by case and frozen as the eval set.</li>
+    <li><strong>Effort</strong>: about 100 hours of hands-on, AI-assisted work (estimated from commit history; a lower bound), 543 commits, 37 SPECs, 10 ADRs.</li>
+  </ul>
+  <p><img class="shot" src="screenshots/20260901_合成理賠案三件套_C002.png" alt="Synthetic claim document set (diagnosis certificate / receipt / application form)"></p>
+
+  <h2>Architecture</h2>
+  <p>Uploading a request file triggers a run. Code checks sit between and after the two LLM roles, and only code can release a case.</p>
+  <pre>
+  Request file upload (Blob) → Event Grid → Storage Queue
+                         │
+                         ▼
+        Container Apps Job (Entra managed identity, keyless)
+                         │
+                         ▼
+  Document Intelligence (prebuilt receipt / custom neural certificate; Blob cache)
+                         │
+                         ▼
+  Extraction  gpt-4.1-mini: unified schema with per-field confidence
+                         │
+                         ▼
+  Intake      code: missing documents → human review
+                         │
+                         ▼
+  Decision    gpt-4o: AI Search clause retrieval → decision + calculation lines + clause segments
+                         │
+                         ▼
+              code: fill verbatim quotes, sum the payout
+                         │
+                         ▼
+  Gate        code: 47 deterministic checks
+                         │
+        ┌────────────────┼────────────────┐
+        ▼                ▼                ▼
+   auto-approve      auto-deny       human review
+                                          │
+                                          ▼
+       Logic Apps digest email → review form → reviews-inbox → stats
+
+  Every run is persisted to Blob runs/&lt;run_id&gt;/ · Job failure → Azure Monitor alert
+  (optional) Repair advisor agent on Foundry Agent Service: writes advice, never changes a decision</pre>
+  <ul>
+    <li><strong>Roles split at verification boundaries, not knowledge domains</strong>: a standalone Policy agent reached clause recall of only 0.772 and missed clauses whose applicability depends on the claim facts, so clause matching and adjudication stay in one gpt-4o call (ADR-008).</li>
+    <li><strong>How much Agent Service is used</strong>: it hosts only the advisory Repair agent, which is off by default and has never been enabled in the cloud Job. Routing between roles stays in code on purpose, not in model orchestration.</li>
+    <li><strong>Model tiering</strong>: moving extraction to gpt-4.1-mini cut per-case cost by 33.8% with no regression on the 72-case eval at the time (ADR-007).</li>
+  </ul>
+
+  <h2>Tech Stack</h2>
+  <table>
+    <tr><th>Category</th><th>Stack</th></tr>
+    <tr><td>AI Models</td><td>Azure OpenAI gpt-4o (decision), gpt-4.1-mini (extraction), Structured Outputs (JSON Schema)</td></tr>
+    <tr><td>Document Understanding</td><td>Azure AI Document Intelligence (prebuilt receipt, self-trained custom neural for medical certificates)</td></tr>
+    <tr><td>Retrieval</td><td>Azure AI Search (policy clause index)</td></tr>
+    <tr><td>Agent</td><td>Azure AI Foundry Agent Service (advisory mode, no release authority)</td></tr>
+    <tr><td>Deterministic Routing</td><td>Program-side Gate: 47 checks (clause lookup, amount caps, day counts, waiting periods, confidence thresholds)</td></tr>
+    <tr><td>Orchestration &amp; Triggering</td><td>Azure Container Apps Jobs, Event Grid, Storage Queue (KEDA)</td></tr>
+    <tr><td>Storage</td><td>Azure Blob Storage (inputs, outputs, review records, DI cache)</td></tr>
+    <tr><td>Human Review</td><td>Azure Logic Apps (digest email + review form)</td></tr>
+    <tr><td>Monitoring &amp; Cost</td><td>Azure Monitor / Log Analytics (Job failure alerts), Cost Management budget alerts</td></tr>
+    <tr><td>Identity &amp; Security</td><td>Microsoft Entra managed identity, RBAC (keyless)</td></tr>
+    <tr><td>Infrastructure</td><td>Bicep (IaC), Azure Container Registry, GitHub Actions CI</td></tr>
+    <tr><td>Code</td><td>Python 3.11, Pydantic v2 (single source of truth for schemas)</td></tr>
+    <tr><td>Quality</td><td>pytest (1,362 tests), Hypothesis, mypy, ruff, pip-audit, hand-written mutation testing (225 mutants)</td></tr>
+    <tr><td>Evaluated, Not Adopted</td><td>Azure AI Content Safety (groundedness / Prompt Shields, see ADR-009)</td></tr>
+  </table>
+
+  <h2>Highlights</h2>
+  <ul>
+    <li><strong>The LLM judges facts; code decides release.</strong> Every experiment that let the LLM fix a case and release it exposed a matching hole in the Gate, so the model holds no release authority. Azure's groundedness detection and Prompt Shields were measured before being rejected, and every conclusion is backed by evidence in 10 ADRs.</li>
+    <li><strong>Cost as a first-class engineering goal.</strong> Everything that did not need the cloud (data, schema, Gate, eval, Bicep) was finished at $0 before Azure was opened. Moving extraction to gpt-4.1-mini cut per-case cost by 33.8% with no eval regression. Everything is torn down with Bicep afterwards: NT$0 per day once removed.</li>
+    <li><strong>Evidence before claims.</strong> Acceptance criteria are written before each change, regressions are judged against a range from at least 3 past runs, and changes that miss are withdrawn (SPEC-ab and SPEC-x were). Counting release errors in both directions uncovered 6 wrongful auto-denials the old metric missed. 1,362 tests plus 225 hand-written mutants, all killed.</li>
+    <li><strong>Event-driven and keyless.</strong> Uploading a request file triggers Event Grid → Storage Queue → a Container Apps Job. Every call uses Entra managed identity and RBAC with no API keys, and the Job is billed only while it runs, so Container Apps costs nothing when idle.</li>
+    <li><strong>Code-filled citations.</strong> The model only points to a clause segment and code fills in the exact quote from the clause library, so false "misquoted citation" flags, once the most common kind, dropped to 0 in v17.</li>
+  </ul>
+
+  <h3>v17 full regression (73 cases, event-triggered in the cloud)</h3>
+  <table>
+    <tr><th>Metric</th><th>Result</th></tr>
+    <tr><td>Release errors (wrong payout / wrongful auto-deny)</td><td><strong>0 / 0</strong> — all 24 auto-approved payouts exact, all 20 auto-denials correct</td></tr>
+    <tr><td>Dangerous errors (should deny, paid instead)</td><td>0</td></tr>
+    <tr><td>Post-Gate accuracy / manual-review recall</td><td>0.726 / 1.0</td></tr>
+    <tr><td>Misquoted citations / clause segment not found</td><td>0 / 1.5%</td></tr>
+    <tr><td>Routed to humans</td><td>29 cases (the price of "when in doubt, ask a human")</td></tr>
+  </table>
+  <p><img class="shot" src="screenshots/20261011_v17_digest.png" alt="v17 review digest email"></p>
+
+  <h3>Cost (Azure Cost Management actuals)</h3>
+  <table>
+    <tr><th>Item</th><th>Amount</th></tr>
+    <tr><td>Total spend, October 2026 development</td><td>NT$2,189 (≈ US$68; budget 3,000; ~97% model usage)</td></tr>
+    <tr><td>One 73-case full run</td><td>≈ NT$67</td></tr>
+    <tr><td>Idle environment</td><td>≈ NT$4–5 / day (ACR + alerts)</td></tr>
+    <tr><td>After teardown</td><td>NT$0 / day; teardown takes 15 minutes</td></tr>
+  </table>
+  <p><img class="shot" src="screenshots/20261017_cost_zero_day.png" alt="Cost analysis the day after teardown: every meter NT$0"></p>
+  <p class="caption">Every meter is NT$0 the day after teardown (Oct 17); the green area from Oct 17 onward is Azure's forecast, not actual spend.</p>
+
+  <h2>Development Story</h2>
+  <p>The project was not a straight line of successes but a series of "hit a problem → verify → correct honestly". Key moments:</p>
+
+  <h3>① 100% coverage and all tests green — so why was there still a hole?</h3>
+  <p><strong>Resolution</strong>: manual mutation testing on the schema conversion layer left mutant M3 (removing the forcing logic for nested objects inside arrays) alive with 13 green tests and 100% line coverage — the existing tests only checked the output for the current models and never asserted the function's core semantics. A direct unit test with a hand-built inline nested structure killed it, and all 6 mutants ended up killed. Concrete proof that coverage is a detector, not a target.</p>
+
+  <h3>② The PDF looked fine, so why did text extraction return gibberish?</h3>
+  <p><strong>Resolution</strong>: the first synthetic PDFs used a CID font (MSung-Light). Viewers rendered them perfectly, but pdfplumber read back scrambled characters — CID fonts write no ToUnicode map, so <strong>correct rendering does not mean a correct text layer</strong>. Embedding a TTF (wqy-zenhei) fixed it, and "always verify generated files by reading them back" became a standing rule.</p>
+
+  <h3>③ How do you get idle cost to zero when nobody is watching the demo?</h3>
+  <p><strong>Resolution</strong>: teardown as cost control — everything is removed ($0 standing cost) and rebuilt with Bicep when needed. The key insight: the repo must keep <strong>the ingredients and scripts that regenerate everything</strong> (DI training samples and labels, policy PDFs and index scripts), not the artifacts (custom models cannot be exported). Two real teardowns took 27 and then 15 minutes, and the bill was zero the next day.</p>
+
+  <h3>④ How do you keep 40 ground-truth payouts free of transcription errors?</h3>
+  <p><strong>Resolution</strong>: the first 10 cases were hand-written and hand-checked; the next 30 were generated from templates × parameters, with ground-truth amounts produced by a deterministic calculator that shares <strong>one definition with the policy parameters</strong> and writes its derivation into each case's truth file. Day-count conventions (admission and discharge days inclusive) live in a single function, so they cannot drift.</p>
+
+  <h3>⑤ I verified all 40 ground truths green, yet human review found 7 errors</h3>
+  <p><strong>Resolution</strong>: cases, clauses and ground truth all came from the same generator, and self-consistency is not correctness — a misreading of a clause makes all three wrong in exactly the same way, invisible to any automated check. A case-by-case checklist reviewed by a human found 6 errors, the worst being a "missing documents" case filed under the "fraud and misrepresentation" clause; fixing it surfaced a 7th (a procedure missing from the appendix table). All shared one trait: <strong>semantic consistency across files</strong> (clause number ↔ clause text, case label ↔ field values), while code can only check structure and arithmetic. In one sentence: <strong>an AI should not grade the exam it wrote</strong>.</p>
+  <p><img class="shot" src="screenshots/20260901_真值檢核表_人工紅筆意見.png" alt="Ground-truth checklist with the reviewer's red-pen notes"></p>
+
+  <h3>⑥ Letting the LLM repair flagged cases raised accuracy — so why was it rejected?</h3>
+  <p><strong>Resolution</strong>: a Repair agent re-decided Gate-flagged cases with the Gate as a tool, behind six deterministic guards. Two full replays did raise post-Gate accuracy (0.694 → 0.792), but each round released one wrong amount: once the model shrank a receipt amount to satisfy a cap check (C003 −2,000), once it fixed a category and hit a per-segment cap the Gate did not check (C055 +5,000). <strong>Every released error mapped to a hole in the Gate</strong>, so the repair layer turned "lucky manual reviews" into losses. Repair became advisory only, and the holes were closed with deterministic checks (ADR-008).</p>
+
+  <h3>⑦ Can Azure's groundedness detection catch fabricated claims?</h3>
+  <p><strong>Resolution</strong>: first the API was shown to be deterministic (10 cases × 3 calls, zero spread), then its discrimination was tested on pairs with known answers: a fabricated pre-existing-condition claim was caught 0/3, a legitimate, sourced deny was flagged as fabricated 3/3, and day-count claims on clean cases raised 12/12 false alarms. The API treats inference as fabrication and clause vocabulary as grounding, which does not fit claims adjudication, so it stays out of the main pipeline. Prompt Shields caught 0/2 Chinese injections, while the existing extraction → schema → Gate boundary released 0 of 9 injected variants with 0 decision flips (ADR-009).</p>
+
+  <h2>Data &amp; Compliance</h2>
+  <ul>
+    <li>This is a <strong>technical showcase</strong>. Policy clauses are fictional teaching texts, not real insurance products, and constitute no offer or basis for any claim.</li>
+    <li>All claims, names, hospitals and medical content are <strong>synthetic, zero PHI</strong>; every generated PDF is labelled as synthetic demo data, and review cards and digest emails mask names in free-text fields.</li>
+    <li>Code under the MIT License; no employer resources or internal document formats were used.</li>
+  </ul>
+
+  <footer>
+    <a href="https://app.notion.com/p/Sean-Chuang-AI-Engineer-Portfolio-39537081de3380ed9db7c1f73e6b83e3">← Back to portfolio</a>
+  </footer>
+
+</div>
+</body>
+</html>

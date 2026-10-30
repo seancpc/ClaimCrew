@@ -1,0 +1,67 @@
+{
+  "claim_id": "C054",
+  "scenario": "金額計算件:同一次住院多項手術以最高一項為限(POL-A 第10條;C051 鏡像)",
+  "synthetic": true,
+  "documents": {
+    "diagnosis_certificate": {
+      "patient_name": "傅志偉",
+      "diagnosis": "膽結石併腹股溝疝氣",
+      "icd_code": "K80.20;K40.90",
+      "admissions": [
+        {
+          "admission_date": "2026-03-03",
+          "discharge_date": "2026-03-07",
+          "icu_days": "0"
+        }
+      ],
+      "treatment_summary": "同一次全身麻醉下行膽囊切除術併疝氣修補術",
+      "issue_date": "2026-03-07",
+      "hospital_name": "安心綜合醫院"
+    },
+    "medical_receipt": {
+      "hospital_name": "安心綜合醫院",
+      "patient_name": "傅志偉",
+      "receipt_date": "2026-03-07",
+      "items": [
+        {
+          "item_name": "病房費",
+          "amount": "10000"
+        },
+        {
+          "item_name": "手術費",
+          "amount": "48000"
+        },
+        {
+          "item_name": "麻醉費",
+          "amount": "9000"
+        },
+        {
+          "item_name": "藥費",
+          "amount": "3600"
+        },
+        {
+          "item_name": "醫材費",
+          "amount": "14000"
+        }
+      ],
+      "total_amount": "84600",
+      "is_copy": false
+    },
+    "claim_application": {
+      "applicant_name": "傅志偉",
+      "policy_number": "POL-A-2026-01",
+      "policy_effective_date": "2024-12-01",
+      "claim_type": "住院醫療",
+      "application_date": "2026-03-13",
+      "claimed_amount": "50000",
+      "other_insurer_paid": {
+        "room_fee": "0",
+        "surgery_fee": "0",
+        "misc_fee": "0",
+        "ambulance_fee": "0",
+        "unallocated": "0"
+      }
+    },
+    "incident_statement": null
+  }
+}

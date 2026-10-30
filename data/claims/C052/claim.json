@@ -1,0 +1,63 @@
+{
+  "claim_id": "C052",
+  "scenario": "既往症拒付件(POL-B 第16條)",
+  "synthetic": true,
+  "documents": {
+    "diagnosis_certificate": {
+      "patient_name": "詹美惠",
+      "diagnosis": "子宮肌瘤",
+      "icd_code": "D25.9",
+      "admissions": [
+        {
+          "admission_date": "2026-04-14",
+          "discharge_date": "2026-04-17",
+          "icu_days": "0"
+        }
+      ],
+      "treatment_summary": "病患自 2024-08 起於本院婦產科追蹤子宮肌瘤,近期經血過多致貧血,行子宮肌瘤切除術",
+      "issue_date": "2026-04-17",
+      "hospital_name": "平安紀念醫院"
+    },
+    "medical_receipt": {
+      "hospital_name": "平安紀念醫院",
+      "patient_name": "詹美惠",
+      "receipt_date": "2026-04-17",
+      "items": [
+        {
+          "item_name": "病房費",
+          "amount": "8000"
+        },
+        {
+          "item_name": "手術費",
+          "amount": "40000"
+        },
+        {
+          "item_name": "麻醉費",
+          "amount": "7000"
+        },
+        {
+          "item_name": "藥費",
+          "amount": "3000"
+        }
+      ],
+      "total_amount": "58000",
+      "is_copy": false
+    },
+    "claim_application": {
+      "applicant_name": "詹美惠",
+      "policy_number": "POL-B-2026-01",
+      "policy_effective_date": "2025-10-01",
+      "claim_type": "手術醫療",
+      "application_date": "2026-04-23",
+      "claimed_amount": "34000",
+      "other_insurer_paid": {
+        "room_fee": "0",
+        "surgery_fee": "0",
+        "misc_fee": "0",
+        "ambulance_fee": "0",
+        "unallocated": "0"
+      }
+    },
+    "incident_statement": null
+  }
+}
