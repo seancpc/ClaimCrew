@@ -112,9 +112,9 @@
 
 ## 10. 交付物
 
-| 交付物 | 說明 | 變現對象 |
+| 交付物 | 說明 | 用途 |
 |---|---|---|
-| GitHub repo(public,個人帳號) | 程式 + Bicep + 合成資料生成器 + eval 腳本(一鍵重跑) | 履歷連結 |
+| GitHub repo(public,個人帳號) | 程式 + Bicep + 合成資料生成器 + eval 腳本(一鍵重跑) | 作品集連結 |
 | GitHub Pages 專案頁(中英雙語) | 沿用 MedAgent/SelectiveCXR 版式;含架構圖、build log、成本儀表截圖 | 作品集 |
 | **架構決策備忘錄(ADR,英文)** | 服務選型 + 被否決方案 + 成本工程 | case study |
 | **Build Log** | 「N 天從零到可用」逐日紀錄 | 快速交付敘事的證據 |
